@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_main2"
+    tools:context="com.goncalojoaocorreia.cameraruler.Main2Activity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageButton
+            android:layout_height="160dp"
+            android:layout_width="160dp"
+            android:background="@drawable/paint"
+            android:layout_weight="1"
+            android:id="@+id/paint"
+            android:onClick="openPaint"
+            android:layout_margin="16dp"
+
+            />
+
+        <ImageButton
+            android:layout_height="160dp"
+            android:layout_width="160dp"
+            android:background="@drawable/bed"
+            android:layout_weight="1"
+            android:id="@+id/bed"
+            android:onClick="openBed"
+            android:layout_margin="16dp"
+
+            />
+
+    </TableRow>
+
+    <TableRow>
+        <ImageButton
+            android:layout_height="160dp"
+            android:layout_width="160dp"
+            android:background="@drawable/fridge"
+            android:layout_weight="1"
+            android:id="@+id/fridge"
+            android:onClick="openFridge"
+            android:layout_margin="16dp"
+
+            />
+
+        <ImageButton
+            android:layout_height="160dp"
+            android:layout_width="160dp"
+            android:background="@drawable/sofa"
+            android:layout_weight="1"
+            android:id="@+id/sofa"
+            android:onClick="openSofa"
+            android:layout_margin="16dp"
+
+            />
+
+    </TableRow>
+
+    <TableRow>
+        <ImageButton
+            android:layout_height="160dp"
+            android:layout_width="160dp"
+            android:background="@drawable/table"
+            android:layout_weight="1"
+            android:id="@+id/table"
+            android:onClick="openTable"
+            android:layout_margin="16dp"
+
+            />
+
+        <ImageButton
+            android:layout_height="160dp"
+            android:layout_width="160dp"
+            android:background="@drawable/tv"
+            android:layout_weight="1"
+            android:id="@+id/tv"
+            android:onClick="openTV"
+            android:layout_margin="16dp"
+
+            />
+
+    </TableRow>
+
+
+
+
+
+</TableLayout>

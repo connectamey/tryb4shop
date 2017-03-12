@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/camera-ruler-master.iml" filepath="$PROJECT_DIR$/camera-ruler-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/camera-rulerbe.iml" filepath="$PROJECT_DIR$/camera-rulerbe.iml" />
     </modules>
   </component>
 </project>
