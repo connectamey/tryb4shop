@@ -37,14 +37,49 @@ public class Main2Activity extends ActionBarActivity {
 
     public void openPaint(View view) {
 
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(Main2Activity.this,MainActivity.class);
+        String name = "Painting";
+        intent.putExtra("TAG", name);
         startActivity(intent);
     }
 
     public void openBed(View view) {
 
         Intent intent = new Intent(this,Main3Activity.class);
+        String name = "Bed";
+        intent.putExtra("TAG",name);
         startActivity(intent);
     }
 
+    public void openFridge(View view) {
+
+        Intent intent = new Intent(this,MainActivity.class);
+        String name = "Fridge";
+        intent.putExtra("TAG",name);
+        startActivity(intent);
+    }
+
+    public void openSofa(View view) {
+
+        Intent intent = new Intent(this,MainActivity.class);
+        String name = "Sofa";
+        intent.putExtra("TAG",name);
+        startActivity(intent);
+    }
+
+    public void openTable(View view) {
+
+        Intent intent = new Intent(this,MainActivity.class);
+        String name = "Table";
+        intent.putExtra("TAG",name);
+        startActivity(intent);
+    }
+
+    public void openTV(View view) {
+
+        Intent intent = new Intent(this,MainActivity.class);
+        String name = "Television";
+        intent.putExtra("TAG",name);
+        startActivity(intent);
+    }
 }

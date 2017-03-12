@@ -65,6 +65,15 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
 
         setContentView(R.layout.activity_main);
 
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle != null){
+            String name = bundle.getString("TAG");
+            Toast.makeText(MainActivity.this,name,Toast.LENGTH_SHORT).show();
+            Log.d("data","recieved "+name+" data");
+        }
+
+
         preview = (FrameLayout) findViewById(R.id.camera_preview);
 
         btn_takePicture = (Button) findViewById(R.id.button_takePicture);
