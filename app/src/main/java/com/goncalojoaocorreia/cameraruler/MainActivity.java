@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DialogFragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -259,9 +260,25 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
     private void showResult(){
         if(result != -1) {
             DecimalFormat decimalFormat = new DecimalFormat("#.##");
-
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(getResources().getString(R.string.result_lbl) + decimalFormat.format(result));
+
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(MainActivity.this, Main3Activity.class);
+                    DecimalFormat decimalFormat = new DecimalFormat("#.##");
+                    Bundle bundle = getIntent().getExtras();
+                    String name = bundle.getString("TAG");
+                    intent.putExtra("TAG",name);
+                    intent.putExtra("LEN",decimalFormat.format(result));
+
+                    Toast.makeText(MainActivity.this,name+"  "+decimalFormat.format(result),Toast.LENGTH_SHORT).show();
+                    Log.d("data","recieved "+name+" data\n"+"Length:"+decimalFormat.format(result));
+
+                    startActivity(intent);
+                }
+            });
             builder.create().show();
         }
     }

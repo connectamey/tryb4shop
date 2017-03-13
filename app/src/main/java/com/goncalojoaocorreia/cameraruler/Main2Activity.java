@@ -45,7 +45,7 @@ public class Main2Activity extends ActionBarActivity {
 
     public void openBed(View view) {
 
-        Intent intent = new Intent(this,Main3Activity.class);
+        Intent intent = new Intent(Main2Activity.this,MainActivity.class);
         String name = "Bed";
         intent.putExtra("TAG",name);
         startActivity(intent);
