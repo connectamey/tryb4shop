@@ -14,7 +14,7 @@
     <string name="error_noPoints">Please tap on the screen to select the points</string>
     <string name="error_noScale">Please enter the scale value</string>
     <string name="error_numberFormat">Please enter a decimal number</string>
-    <string name="result_lbl">Length: </string>
+    <string name="result_lbl">Length : </string>
     <string name="btn_takePicture">Take Picture</string>
     <string name="action_choosePhoto">Choose existing photo</string>
     <string name="storageDeleted">Photos deleted</string>

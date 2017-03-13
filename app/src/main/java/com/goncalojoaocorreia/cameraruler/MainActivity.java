@@ -70,7 +70,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
 
         if (bundle != null){
             String name = bundle.getString("TAG");
-            Toast.makeText(MainActivity.this,name,Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"Yo have selected"+" "+name+" "+"Category",Toast.LENGTH_SHORT).show();
             Log.d("data","recieved "+name+" data");
         }
 
@@ -273,7 +273,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
                     intent.putExtra("TAG",name);
                     intent.putExtra("LEN",decimalFormat.format(result));
 
-                    Toast.makeText(MainActivity.this,name+"  "+decimalFormat.format(result),Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Category :"+" "+name+"\n\n"+"Length :"+" "+decimalFormat.format(result),Toast.LENGTH_SHORT).show();
                     Log.d("data","recieved "+name+" data\n"+"Length:"+decimalFormat.format(result));
 
                     startActivity(intent);
