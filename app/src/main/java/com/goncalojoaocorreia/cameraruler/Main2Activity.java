@@ -39,7 +39,7 @@ public class Main2Activity extends ActionBarActivity {
 
         Intent intent = new Intent(Main2Activity.this,MainActivity.class);
         String name = "Painting";
-        intent.putExtra("TAG", name);
+        intent.putExtra("NAME", name);
         startActivity(intent);
     }
 
@@ -47,7 +47,7 @@ public class Main2Activity extends ActionBarActivity {
 
         Intent intent = new Intent(Main2Activity.this,MainActivity.class);
         String name = "Bed";
-        intent.putExtra("TAG",name);
+        intent.putExtra("NAME",name);
         startActivity(intent);
     }
 
@@ -55,7 +55,7 @@ public class Main2Activity extends ActionBarActivity {
 
         Intent intent = new Intent(this,MainActivity.class);
         String name = "Fridge";
-        intent.putExtra("TAG",name);
+        intent.putExtra("NAME",name);
         startActivity(intent);
     }
 
@@ -63,7 +63,7 @@ public class Main2Activity extends ActionBarActivity {
 
         Intent intent = new Intent(this,MainActivity.class);
         String name = "Sofa";
-        intent.putExtra("TAG",name);
+        intent.putExtra("NAME",name);
         startActivity(intent);
     }
 
@@ -71,7 +71,7 @@ public class Main2Activity extends ActionBarActivity {
 
         Intent intent = new Intent(this,MainActivity.class);
         String name = "Table";
-        intent.putExtra("TAG",name);
+        intent.putExtra("NAME",name);
         startActivity(intent);
     }
 
@@ -79,7 +79,7 @@ public class Main2Activity extends ActionBarActivity {
 
         Intent intent = new Intent(this,MainActivity.class);
         String name = "Television";
-        intent.putExtra("TAG",name);
+        intent.putExtra("NAME",name);
         startActivity(intent);
     }
 }

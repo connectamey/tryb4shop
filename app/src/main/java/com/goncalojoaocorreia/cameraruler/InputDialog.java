@@ -8,9 +8,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 
-/**
- * Created by Gonçalo on 16/02/2015.
- */
+
 public class InputDialog extends DialogFragment{
 
     @Override
@@ -35,12 +33,10 @@ public class InputDialog extends DialogFragment{
         return builder.create();
     }
 
-    /* The activity that creates an instance of this dialog fragment must
-     * implement this interface in order to receive event callbacks.
-     * Each method passes the DialogFragment in case the host needs to query it. */
+
     public interface InputDialogListener{
-        public void onDialogPositiveClick(DialogFragment dialog);
-        public void onDialogNegativeClick(DialogFragment dialog);
+        void onDialogPositiveClick(DialogFragment dialog);
+        void onDialogNegativeClick(DialogFragment dialog);
     }
 
     InputDialogListener listener;

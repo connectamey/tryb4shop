@@ -59,7 +59,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
     private Button btn_takePicture;
     private File photoFile;
     private double result;
-
+    private double resultHeight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +69,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
         Bundle bundle = getIntent().getExtras();
 
         if (bundle != null){
-            String name = bundle.getString("TAG");
+            String name = bundle.getString("NAME");
             Toast.makeText(MainActivity.this,"Yo have selected"+" "+name+" "+"Category",Toast.LENGTH_SHORT).show();
             Log.d("data","recieved "+name+" data");
         }
@@ -242,10 +242,12 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
     @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
         int inputUnit = ((Spinner)dialog.getDialog().findViewById(R.id.input_unit_chooser)).getSelectedItemPosition();
+       //int inputUnitHeight = ((Spinner)dialog.getDialog().findViewById(R.id.input_unit_chooser)).getSelectedItemPosition();
         int outputUnit = ((Spinner) dialog.getDialog().findViewById(R.id.output_unit_chooser)).getSelectedItemPosition();
         try {
             double reference = Double.parseDouble(((EditText) dialog.getDialog().findViewById(R.id.reference_input)).getText().toString());
             result = drawView.calculate(reference, inputUnit, outputUnit);
+            resultHeight = drawView.calculateHeight(reference, inputUnit, outputUnit);
             showResult();
         }catch(NumberFormatException ex){
             Toast.makeText(this, getResources().getString(R.string.error_numberFormat), Toast.LENGTH_SHORT).show();
@@ -261,7 +263,8 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
         if(result != -1) {
             DecimalFormat decimalFormat = new DecimalFormat("#.##");
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage(getResources().getString(R.string.result_lbl) + decimalFormat.format(result));
+            builder.setMessage(getResources().getString(R.string.result_lbl) + decimalFormat.format(result)+"\n"+"Height :"+decimalFormat.format(resultHeight));
+
 
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
@@ -269,17 +272,29 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
                     Intent intent = new Intent(MainActivity.this, Main3Activity.class);
                     DecimalFormat decimalFormat = new DecimalFormat("#.##");
                     Bundle bundle = getIntent().getExtras();
-                    String name = bundle.getString("TAG");
-                    intent.putExtra("TAG",name);
+                    String name = bundle.getString("NAME");
+                    intent.putExtra("NAME",name);
                     intent.putExtra("LEN",decimalFormat.format(result));
+                    intent.putExtra("HEI",decimalFormat.format(resultHeight));
 
-                    Toast.makeText(MainActivity.this,"Category :"+" "+name+"\n\n"+"Length :"+" "+decimalFormat.format(result),Toast.LENGTH_SHORT).show();
-                    Log.d("data","recieved "+name+" data\n"+"Length:"+decimalFormat.format(result));
 
+                    Toast.makeText(MainActivity.this,"Category :"+" "+name+"\n\n"+"Length : "+" "+decimalFormat.format(result)+"\nHeight : "+" "+decimalFormat.format(resultHeight),Toast.LENGTH_SHORT).show();
+                    Log.d("data","received "+name+" data\n"+"Length:"+decimalFormat.format(result)+"\nHeight:"+decimalFormat.format(resultHeight));
+                    //Log.d("data","received "+name+" data\n"+"Height:"+decimalFormat.format(resultHeight));
                     startActivity(intent);
                 }
             });
             builder.create().show();
         }
+    }
+
+    public void Go_to_Website(View view) {
+        Intent intent=new Intent(MainActivity.this,Main3Activity.class);
+        Bundle bundle = getIntent().getExtras();
+        String name = bundle.getString("NAME");
+        intent.putExtra("NAME",name);
+       startActivity(intent);
+
+
     }
 }

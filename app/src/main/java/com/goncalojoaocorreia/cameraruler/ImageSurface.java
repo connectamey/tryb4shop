@@ -12,9 +12,7 @@ import android.view.SurfaceView;
 
 import java.io.File;
 
-/**
- * Created by Gonçalo on 13/02/2015.
- */
+
 
 /**
  * Class used to handle displaying the photo/image to the user.

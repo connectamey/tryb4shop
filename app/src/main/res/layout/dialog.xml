@@ -13,11 +13,21 @@
             android:layout_height="wrap_content"
             android:text="@string/input_hint"
             android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/lb_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reference" />
+
         <EditText
             android:id="@+id/reference_input"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/lbl_reference_length"
+            android:layout_toRightOf="@+id/lb_length"
             android:inputType="numberDecimal"/>
 
         <Spinner
@@ -29,11 +39,12 @@
             android:layout_toEndOf="@+id/reference_input"
             android:layout_centerVertical="true">
         </Spinner>
-        </RelativeLayout>
-    
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="10dp" />
+    </RelativeLayout>
+
+
+
+
+
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -43,6 +54,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/input_hint_units"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:layout_toRightOf="@id/output_unit_hint"/>
+
 
         <Spinner
             android:id="@+id/output_unit_chooser"

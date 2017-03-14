@@ -5,7 +5,7 @@
     <string name="input_hint_units">Output unit</string>
     <string name="action_settings">Settings</string>
     <string name="action_cleanStorage">Delete stored photos</string>
-    <string name="input_hint">Reference length and unit</string>
+    <string name="input_hint">Reference and units</string>
     <string name="setReferencePoints">Select reference points</string>
     <string name="setMeasurePoints">Select measurement points</string>
     <string name="setScaleValue">Enter the reference length and press OK</string>
@@ -36,4 +36,6 @@
 <string name="Refrigerator100">https://ubiquitoushomes.com/product-category/refrigerator/?filter_refrigerator=height-100-to-200-cm</string>
 <string name="Sofa140">https://ubiquitoushomes.com/product-category/sofa/?filter_sofa-size=140-to-170-cm</string>
 <string name="Sofa170">https://ubiquitoushomes.com/product-category/sofa/?filter_sofa-size=170-to-230-cm</string>
+    <string name="Length">Referece Length</string>
+    <string name="Height">Reference Height</string>
 </resources>

@@ -1,12 +1,11 @@
 package com.goncalojoaocorreia.cameraruler;
 
 import android.graphics.Point;
+import android.util.Log;
 
 import java.util.List;
 
-/**
- * Created by Gonçalo on 13/02/2015.
- */
+
 
 /**
  * Class that handles all the mathematical operations.
@@ -15,17 +14,9 @@ public class Ruler {
 
     private Ruler(){}
 
-    /**
-     * Based on a list of 4 points, computes the distance between the last 2 using the first 2 as a
-     * reference.
-     * @param points A List of 4 points
-     * @param scale The value of the distance between the first 2 points
-     * @param inputUnitIndex Input unit
-     * @param outputUnitIndex Output unit
-     * @return The value of the distance between the last 2 points
-     */
+
     public static double compute(List<Point> points, double scale, int inputUnitIndex, int outputUnitIndex){
-        if(points.size() < 4) return -1;
+        if(points.size() < 6) return -1;
 
         //Get reference points
         Point ref1 = points.get(0);
@@ -34,36 +25,53 @@ public class Ruler {
         Point m1 = points.get(2);
         Point m2 = points.get(3);
 
+
         double reference = getDistance(ref1, ref2);
+        //double reference_two = getDistance(ref3, ref4);
         double measurement = getDistance(m1, m2);
+        //double height = getDistance(n1, n2);
 
         measurement = (measurement * scale) / reference; //Get the actual distance
         //Convert to the right unit
         measurement = convertUnits(inputUnitIndex, reference, outputUnitIndex, measurement);
-
         return measurement;
+
+
     }
 
-    /**
-     * Get the distance between 2 points
-     * @param p1 First point
-     * @param p2 Second point
-     * @return Distance between the 2 points
-     */
+    public static double computeHeight(List<Point> points, double scale, int inputUnitHeightIndex, int outputUnitHeightIndex){
+        if(points.size() < 6) return -1;
+
+        //Get reference points
+        Point ref3 = points.get(0);
+        Point ref4 = points.get(1);
+        //Get the measurement points
+        Point n1 = points.get(4);
+        Point n2 = points.get(5);
+
+
+        //double reference = getDistance(ref3, ref4);
+        double reference = getDistance(ref3, ref4);
+        //double measurement = getDistance(n1, n2);
+        double height = getDistance(n1, n2);
+
+        height = (height * scale) / reference; //Get the actual distance
+        //Convert to the right unit
+        height = convertUnitsHeight(inputUnitHeightIndex, reference, outputUnitHeightIndex, height);
+        Log.d("Height","measurement height :"+height);
+        return height;
+
+
+    }
+
+
     private static double getDistance(Point p1, Point p2){
         double x = Math.pow(p2.x - p1.x, 2);
         double y = Math.pow(p2.y - p1.y, 2);
         return Math.sqrt(x+y);
     }
 
-    /**
-     * Converts between units of length.
-     * @param refUnit The unit of the reference size
-     * @param reference The reference size
-     * @param meaUnit The unit of the measurement size
-     * @param measurement The measurement size
-     * @return measurement converted to refUnit
-     */
+
     private static double convertUnits(int refUnit, double reference, int meaUnit, double measurement){
         if(refUnit == meaUnit)
             return measurement;
@@ -87,12 +95,7 @@ public class Ruler {
         }
     }
 
-    /**
-     * Converts a value in a given unit to meters.
-     * @param measurement The length value.
-     * @param refUnit The original unit.
-     * @return The length value in meters
-     */
+
     private static double toMeters(double measurement, int refUnit){
         switch (refUnit){
             case 0:
@@ -109,4 +112,51 @@ public class Ruler {
                 return -1;
         }
     }
+
+    private static double convertUnitsHeight(int refUnitHeight, double reference, int meaUnitHeight, double height){
+        if(refUnitHeight == meaUnitHeight)
+            return height;
+
+        height = toMetersHeight(height, refUnitHeight);
+        switch (meaUnitHeight){
+            case 0:
+                return height;
+            case 1:
+                return Utils.metersToCentimeters(height);
+            case 2:
+                return Utils.metersToMillimeters(height);
+            case 3:
+                return Utils.metersToInch(height);
+            case 4:
+                return Utils.metersToFeet(height);
+            case 5:
+                return Utils.metersToYards(height);
+            default:
+                return -1;
+        }
+    }
+
+
+    private static double toMetersHeight(double height, int refUnitHeight){
+        switch (refUnitHeight){
+            case 0:
+                return height;
+            case 1:
+                return Utils.centimetersToMeters(height);
+            case 2:
+                return Utils.millimetersToMeters(height);
+            case 3:
+                return Utils.inchesToMeters(height);
+            case 4:
+                return Utils.yardsToMeters(height);
+            default:
+                return -1;
+        }
+    }
+
+
+
+
+
+
 }
