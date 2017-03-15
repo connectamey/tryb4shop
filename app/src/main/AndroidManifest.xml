@@ -32,8 +32,7 @@
             android:label="capture photo"
             android:screenOrientation="landscape"/>
         <activity android:name=".Main3Activity"
-            android:label="Webview"
-            ></activity>
+            android:label="Webview"/>
     </application>
 
 </manifest>
