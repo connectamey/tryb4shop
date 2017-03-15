@@ -1,4 +1,4 @@
-package com.goncalojoaocorreia.cameraruler;
+package com.be.ubihomes;
 
 import android.app.Activity;
 import android.app.AlertDialog;

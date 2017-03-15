@@ -1,17 +1,14 @@
-package com.goncalojoaocorreia.cameraruler;
+package com.be.ubihomes;
 
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.view.MotionEvent;
-import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 

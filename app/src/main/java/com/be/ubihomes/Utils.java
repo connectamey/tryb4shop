@@ -1,4 +1,4 @@
-package com.goncalojoaocorreia.cameraruler;
+package com.be.ubihomes;
 
 import android.annotation.TargetApi;
 import android.content.ContentUris;
@@ -179,7 +179,7 @@ public class Utils {
     }
 
 
-    ////////////////////////////////////////////////////////
+    
 
 
 

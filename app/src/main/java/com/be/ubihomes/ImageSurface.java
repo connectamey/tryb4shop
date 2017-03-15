@@ -1,4 +1,4 @@
-package com.goncalojoaocorreia.cameraruler;
+package com.be.ubihomes;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

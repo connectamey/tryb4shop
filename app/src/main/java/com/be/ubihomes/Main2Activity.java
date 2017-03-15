@@ -1,4 +1,4 @@
-package com.goncalojoaocorreia.cameraruler;
+package com.be.ubihomes;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
