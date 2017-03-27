@@ -20,7 +20,6 @@ public class Main3Activity extends ActionBarActivity {
         String name = bundle.getString("NAME");
         String type_length = bundle.getString("LEN");
         String type_height = bundle.getString("HEI");
-
         Toast.makeText(Main3Activity.this, "Category: "+name+"\n Length: "+type_length+"\n Height: "+type_height,Toast.LENGTH_SHORT).show();
 
     }
