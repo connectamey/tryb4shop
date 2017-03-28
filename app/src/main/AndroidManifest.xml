@@ -19,7 +19,6 @@
         android:theme="@style/Theme.AppCompat">
         <activity
             android:name=".Main2Activity"
-            android:label="Ubiquitous Homes"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -29,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"
-            android:label="capture photo"
+            android:label="Capture Photo"
             android:screenOrientation="landscape"/>
         <activity android:name=".Main3Activity"
             android:label="Webview"

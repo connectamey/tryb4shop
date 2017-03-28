@@ -257,7 +257,6 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
 
                     Toast.makeText(MainActivity.this,"Category :"+" "+name+"\n\n"+"Length : "+" "+decimalFormat.format(result)+"\nHeight : "+" "+decimalFormat.format(resultHeight),Toast.LENGTH_SHORT).show();
                     Log.d("data","received "+name+" data\n"+"Length:"+decimalFormat.format(result)+"\nHeight:"+decimalFormat.format(resultHeight));
-                    //Log.d("data","received "+name+" data\n"+"Height:"+decimalFormat.format(resultHeight));
                     startActivity(intent);
                 }
             });
