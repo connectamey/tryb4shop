@@ -36,11 +36,11 @@ public class Main3Activity extends ActionBarActivity {
                 if(dLength<21&&dLength>11&&dHeight<20&&dHeight>11){
                     webView.loadUrl("https://ubiquitoushomes.com/product-category/potraits/?filter_painting-size=10-to-20-inch");
                 }
-                else if(dLength<24&&dLength>15&&dHeight<24&&dHeight>15){
+                else if(dLength<24&&dLength>15&&dHeight<24&&dHeight>15) {
                     webView.loadUrl("https://ubiquitoushomes.com/product-category/potraits/?filter_painting-size=20-to-30-inch");
                 }
             }
-
+           break;
             case "Bed":
             {
                 if(dLength<200&&dLength>183&&dHeight<100&&dHeight>63.5){
@@ -50,7 +50,7 @@ public class Main3Activity extends ActionBarActivity {
                     webView.loadUrl("https://ubiquitoushomes.com/product-category/bed/?filter_bed-size=200-to-220-cm");
                 }
             }
-
+            break;
             case "Fridge":
             {
                 if(dLength<55.5&&dLength>30&&dHeight<147&&dHeight>36.1){
@@ -60,7 +60,7 @@ public class Main3Activity extends ActionBarActivity {
                     webView.loadUrl("https://ubiquitoushomes.com/product-category/refrigerator/?filter_refrigerator=height-100-to-200-cm");
                 }
             }
-
+            break;
             case "Sofa":
             {
                 if(dLength<76&&dLength>72&&dHeight<147.8&&dHeight>142){
@@ -70,7 +70,7 @@ public class Main3Activity extends ActionBarActivity {
                     webView.loadUrl("https://ubiquitoushomes.com/product-category/sofa/?filter_sofa-size=170-to-230-cm");
                 }
             }
-
+            break;
             case "Table":
             {
                 if(dLength<88&&dLength>45.72&&dHeight<58&&dHeight>40.64){
@@ -80,7 +80,7 @@ public class Main3Activity extends ActionBarActivity {
                     webView.loadUrl("https://ubiquitoushomes.com/product-category/tables/?filter_table-size=80-to-120-cm");
                 }
             }
-
+            break;
             case "Television":
                 {
                     //Toast.makeText(Main3Activity.this, "in Television category"+"  "+dLength+"   "+dHeight, Toast.LENGTH_SHORT).show();
@@ -98,6 +98,7 @@ public class Main3Activity extends ActionBarActivity {
                     }
                 }
             break;
+
         }
 
     }
