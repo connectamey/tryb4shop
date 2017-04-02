@@ -17,6 +17,8 @@ import java.util.List;
 
 
 
+
+
 /**
  * Class used to draw the points on screen. Handles user touch input.
  */
@@ -44,6 +46,8 @@ public class DrawView extends SurfaceView {
     protected void onDraw(Canvas canvas){
         int size = circlePoints.size();
         for(int i = 0; i < size; i++){
+
+
             //Set color based on order. First 2 points are the reference points.
             if(i < 2) paint.setColor(REFERENCE_POINT_COLOR);
             //else if(i<4) paint.setColor(REFERENCE_POINT_TWO_COLOR);

@@ -26,8 +26,7 @@
     <string name="TV20">https://ubiquitoushomes.com/product-category/television/?filter_screen=20-to-30</string>
     <string name="TV30">https://ubiquitoushomes.com/product-category/television/?filter_screen=30-to-40</string>
   <string name="TV40">https://ubiquitoushomes.com/product-category/television/?filter_screen=40-to-50</string>
-    <string name="TV50">https://ubiquitoushomes.com/product-category/television/?filter_screen=40-to-50</string>
-    <string name="TV60">https://ubiquitoushomes.com/product-category/television/?filter_screen=50-to-60</string>
+    <string name="TV50">https://ubiquitoushomes.com/product-category/television/?filter_screen=50-to-60</string>
     <string name="Bed180">https://ubiquitoushomes.com/product-category/bed/?filter_bed-size=180-to-200-cm</string>
 <string name="Bed200">https://ubiquitoushomes.com/product-category/bed/?filter_bed-size=200-to-220-cm</string>
     <string name="Table40">https://ubiquitoushomes.com/product-category/tables/?filter_table-size=40-to-80-cm</string>
@@ -38,6 +37,6 @@
 <string name="Refrigerator100">https://ubiquitoushomes.com/product-category/refrigerator/?filter_refrigerator=height-100-to-200-cm</string>
 <string name="Sofa140">https://ubiquitoushomes.com/product-category/sofa/?filter_sofa-size=140-to-170-cm</string>
 <string name="Sofa170">https://ubiquitoushomes.com/product-category/sofa/?filter_sofa-size=170-to-230-cm</string>
-    <string name="Length">Referece Length</string>
+    <string name="Length">Reference Length</string>
     <string name="Height">Reference Height</string>
 </resources>

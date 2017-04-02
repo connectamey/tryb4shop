@@ -106,9 +106,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
             case R.id.action_choosePhoto:
                 dispatchChoosePhotoIntent();
                 break;
-            case R.id.action_takePicture:
-                dispatchTakePictureIntent();
-                break;
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -264,7 +262,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
         }
     }
 
-    public void Go_to_Website(View view) {
+    /*public void Go_to_Website(View view) {
         Intent intent=new Intent(MainActivity.this,Main3Activity.class);
         Bundle bundle = getIntent().getExtras();
         String name = bundle.getString("NAME");
@@ -272,5 +270,5 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
        startActivity(intent);
 
 
-    }
+    }*/
 }
