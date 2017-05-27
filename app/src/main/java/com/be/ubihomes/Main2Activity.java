@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TableLayout;
 
 import java.util.Random;
@@ -11,7 +12,7 @@ import java.util.Random;
 public class Main2Activity extends ActionBarActivity {
 
 
-    String prod_Type;
+    //String prod_Type;
     int[] imageIds = {R.drawable.bg1,
             R.drawable.bg2,
             R.drawable.bg3,
@@ -24,6 +25,7 @@ public class Main2Activity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 

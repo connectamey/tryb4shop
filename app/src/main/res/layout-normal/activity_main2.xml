@@ -10,25 +10,26 @@
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
         <ImageButton
-            android:layout_height="160dp"
-            android:layout_width="160dp"
-            android:background="@drawable/paint"
-            android:layout_weight="1"
             android:id="@+id/paint"
-            android:onClick="openPaint"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/paint"
+            android:onClick="openPaint"
 
             />
 
         <ImageButton
-            android:layout_height="160dp"
-            android:layout_width="160dp"
-            android:background="@drawable/bed"
-            android:layout_weight="1"
             android:id="@+id/bed"
-            android:onClick="openBed"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/bed"
+            android:onClick="openBed"
 
             />
 
@@ -36,50 +37,52 @@
 
     <TableRow
         >
+
         <ImageButton
-            android:layout_height="160dp"
-            android:layout_width="160dp"
-            android:background="@drawable/fridge"
-            android:layout_weight="1"
             android:id="@+id/fridge"
-            android:onClick="openFridge"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/fridge"
+            android:onClick="openFridge"
 
             />
 
         <ImageButton
-            android:layout_height="160dp"
-            android:layout_width="160dp"
-            android:background="@drawable/sofa"
-            android:layout_weight="1"
             android:id="@+id/sofa"
-            android:onClick="openSofa"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/sofa"
+            android:onClick="openSofa"
 
             />
 
     </TableRow>
 
     <TableRow>
+
         <ImageButton
-            android:layout_height="160dp"
-            android:layout_width="160dp"
-            android:background="@drawable/table"
-            android:layout_weight="1"
             android:id="@+id/table"
-            android:onClick="openTable"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/table"
+            android:onClick="openTable"
 
             />
 
         <ImageButton
-            android:layout_height="160dp"
-            android:layout_width="160dp"
-            android:background="@drawable/tv"
-            android:layout_weight="1"
             android:id="@+id/tv"
-            android:onClick="openTV"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/tv"
+            android:onClick="openTV"
 
             />
 

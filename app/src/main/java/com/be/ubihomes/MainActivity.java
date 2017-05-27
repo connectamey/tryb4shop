@@ -5,11 +5,12 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +25,6 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 
 public class MainActivity extends ActionBarActivity implements InputDialog.InputDialogListener{
@@ -39,6 +39,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
     private double resultHeight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
@@ -47,12 +48,14 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
 
         if (bundle != null){
             String name = bundle.getString("NAME");
-            Toast.makeText(MainActivity.this,"Yo have selected"+" "+name+" "+"Category",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"You have selected"+" "+name+" "+"Category",Toast.LENGTH_SHORT).show();
             Log.d("data","recieved "+name+" data");
         }
 
 
         preview = (FrameLayout) findViewById(R.id.camera_preview);
+
+
 
         btn_takePicture = (Button) findViewById(R.id.button_takePicture);
         btn_ok = (Button) findViewById(R.id.button_calculate);
@@ -85,8 +88,8 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -183,7 +186,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
 
     private File createImageFile() throws IOException {
         // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date());
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(null);
