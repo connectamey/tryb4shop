@@ -64,20 +64,7 @@ public class Main3Activity extends ActionBarActivity {
 
 
 
-       /* if (android.os.Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
 
-            boolean hasPermission = (ContextCompat.checkSelfPermission(Main3Activity.this,
-                    android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED);
-            if (!hasPermission) {
-                //  Toast.makeText(Timetable.this,"Please Press 'ALLOW' to enable downloading of timetables,results, etc.",Toast.LENGTH_LONG).show();
-
-                ActivityCompat.requestPermissions(Main3Activity.this,
-                        new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        1);
-
-            }
-
-        }*/
 
         final WebView webView = (WebView) findViewById(R.id.webView1);
         WebSettings webSettings = webView.getSettings();
