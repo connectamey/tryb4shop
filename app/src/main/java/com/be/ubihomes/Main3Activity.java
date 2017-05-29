@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.WindowManager;
@@ -20,6 +21,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Main3Activity extends ActionBarActivity {
@@ -72,8 +74,8 @@ public class Main3Activity extends ActionBarActivity {
         webView.setWebViewClient(new WebViewClient());
 
 
-        // webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
-        //webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        webView.getSettings().setJavaScriptEnabled(true);
         //webView.loadUrl("https://ubiquitoushomes.com/");
 
         Bundle bundle = getIntent().getExtras();
@@ -112,13 +114,34 @@ public class Main3Activity extends ActionBarActivity {
             public void onPageFinished(WebView view, String url) {
                 progressBar.setVisibility(View.INVISIBLE);
                 searchHistory.add(url);
-                webView.loadUrl(url);
-                Toast.makeText(Main3Activity.this, url, Toast.LENGTH_SHORT).show();
-                if (url.endsWith(".png")) {
-                    dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                //webView.loadUrl(url);
+               // Toast.makeText(Main3Activity.this, url, Toast.LENGTH_SHORT).show();
+                if(webView.getUrl().contains(".png")) {
                     DownloadManager.Request request = new DownloadManager.Request(
                             Uri.parse(url));
-                    enqueue = dm.enqueue(request);
+                    request.allowScanningByMediaScanner();
+                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "success.png");
+// You can change the name of the downloads, by changing "download" to everything you want, such as the mWebview title...
+                    DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                    File folder1 = new File("/sdcard/download/success.png");
+                    boolean delete=folder1.delete();
+                    Toast.makeText(getApplicationContext(),"wow"+delete,Toast.LENGTH_SHORT).show();
+
+                    if (folder1.exists()){
+                    }else {
+
+
+                        dm.enqueue(request);
+                        Toast.makeText(Main3Activity.this, "Downloading File", //To notify the Client that the file is being downloaded
+                                Toast.LENGTH_LONG).show();
+
+                    }
+                    //Toast.makeText(Main3Activity.this, url, Toast.LENGTH_SHORT).show();
+//                    dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+//                    DownloadManager.Request request = new DownloadManager.Request(
+//                            Uri.parse(url));
+//                    enqueue = dm.enqueue(request);
                     /*Intent intent = new Intent(Main3Activity.this,Main4Activity.class);
                     startActivity(intent);*/
                 } else {
@@ -127,36 +150,36 @@ public class Main3Activity extends ActionBarActivity {
 
             }
         });
-        BroadcastReceiver receiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                String action = intent.getAction();
-                if (DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(action)) {
-                    long downloadId = intent.getLongExtra(
-                            DownloadManager.EXTRA_DOWNLOAD_ID, 0);
-                    DownloadManager.Query query = new DownloadManager.Query();
-                    query.setFilterById(enqueue);
-                    Cursor c = dm.query(query);
-                    if (c.moveToFirst()) {
-                        int columnIndex = c
-                                .getColumnIndex(DownloadManager.COLUMN_STATUS);
-                        if (DownloadManager.STATUS_SUCCESSFUL == c
-                                .getInt(columnIndex)) {
-
-                            //ImageView view = (ImageView) findViewById(R.id.imageView1);
-                            String uriString = c
-                                    .getString(c
-                                            .getColumnIndex(DownloadManager.COLUMN_LOCAL_URI));
-                           // view.setImageURI(Uri.parse(uriString));
-                        }
-                    }
-                }
-            }
-        };
-
-        registerReceiver(receiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
-
-        //Toast.makeText(this, "Downloaded", Toast.LENGTH_SHORT).show();
+//        BroadcastReceiver receiver = new BroadcastReceiver() {
+//            @Override
+//            public void onReceive(Context context, Intent intent) {
+//                String action = intent.getAction();
+//                if (DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(action)) {
+//                    long downloadId = intent.getLongExtra(
+//                            DownloadManager.EXTRA_DOWNLOAD_ID, 0);
+//                    DownloadManager.Query query = new DownloadManager.Query();
+//                    query.setFilterById(enqueue);
+//                    Cursor c = dm.query(query);
+//                    if (c.moveToFirst()) {
+//                        int columnIndex = c
+//                                .getColumnIndex(DownloadManager.COLUMN_STATUS);
+//                        if (DownloadManager.STATUS_SUCCESSFUL == c
+//                                .getInt(columnIndex)) {
+//
+//                            //ImageView view = (ImageView) findViewById(R.id.imageView1);
+//                            String uriString = c
+//                                    .getString(c
+//                                            .getColumnIndex(DownloadManager.COLUMN_LOCAL_URI));
+//                           // view.setImageURI(Uri.parse(uriString));
+//                        }
+//                    }
+//                }
+//            }
+//        };
+//
+//        registerReceiver(receiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+//
+//        //Toast.makeText(this, "Downloaded", Toast.LENGTH_SHORT).show();
 
 
 
@@ -253,6 +276,7 @@ public class Main3Activity extends ActionBarActivity {
             break;
 
         }
+
 
     }
 

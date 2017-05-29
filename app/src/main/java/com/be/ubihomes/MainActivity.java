@@ -42,6 +42,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
         //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
 
+
         setContentView(R.layout.activity_main);
 
         Bundle bundle = getIntent().getExtras();
@@ -186,9 +187,9 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
 
     private File createImageFile() throws IOException {
         // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+//        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 
-        String imageFileName = "JPEG_" + timeStamp + "_";
+        String imageFileName = "taken";
         File storageDir = getExternalFilesDir(null);
 
         return File.createTempFile(

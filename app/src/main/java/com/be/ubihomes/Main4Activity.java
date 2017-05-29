@@ -1,7 +1,9 @@
 package com.be.ubihomes;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -42,8 +44,20 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         });
 
 
+        String fileName = "stored_image.jpg";
+        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+        String pathDir = baseDir + "/Android/data/com.be.ubihomes/";
+
+        String fileName2 = "stored_image.jpg";
+        String baseDir2 = Environment.getExternalStorageDirectory().getAbsolutePath();
+        String pathDir2 = baseDir + "/Android/data/com.mypackage.myapplication/";
 
         product=(ImageView)findViewById(R.id.product);
+        product.setImageResource(R.drawable.tv1);
+        Uri imgUri= Uri.parse("file:///sdcard/download/success.png");
+        String mainu=imgUri.toString();
+        Toast.makeText(getApplicationContext(),mainu,Toast.LENGTH_SHORT).show();
+        product.setImageURI(imgUri);
         product.setOnTouchListener(this);
 
         imageView = (ImageView) findViewById(R.id.imgView);
@@ -51,7 +65,7 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
 
         Bundle bundle = getIntent().getExtras();
         String receiver = bundle.getString("img");
-        Toast.makeText(Main4Activity.this,receiver,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(Main4Activity.this,receiver,Toast.LENGTH_SHORT).show();
 
 
 
