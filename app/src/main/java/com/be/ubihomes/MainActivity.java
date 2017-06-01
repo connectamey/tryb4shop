@@ -23,8 +23,6 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 public class MainActivity extends ActionBarActivity implements InputDialog.InputDialogListener{
@@ -122,7 +120,17 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
             // Create the File where the photo should go
             photoFile = null;
             try {
+                String imgp;
                 photoFile = createImageFile();
+                imgp=photoFile.getName().toString();
+
+
+                Toast.makeText(MainActivity.this,imgp,Toast.LENGTH_SHORT).show();
+
+
+                Intent intent = new Intent(MainActivity.this,Main3Activity.class);
+                intent.putExtra("PATH",imgp);
+
             } catch (IOException ex) {
                 // Error occurred while creating the File
                 Toast.makeText(this, "Error creating image", Toast.LENGTH_SHORT);
@@ -194,7 +202,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
 
         return File.createTempFile(
                 imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
+                ".bmp",         /* suffix */
                 storageDir      /* directory */
         );
     }

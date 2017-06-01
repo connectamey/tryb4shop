@@ -20,9 +20,11 @@
         android:layout_centerInParent="true"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/s"
-        android:text="goto 2" />
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/vision"
+        android:visibility="gone" />
+
 
 </RelativeLayout>

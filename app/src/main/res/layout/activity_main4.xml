@@ -7,11 +7,11 @@
     tools:context="com.be.ubihomes.Main4Activity">
 
     <ImageView
-        android:layout_width="0dp"
-        android:layout_height="551dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:gravity="center"
-        android:id="@+id/imgView"
+        android:id="@+id/productBack"
         tools:layout_editor_absoluteY="8dp"
         tools:layout_editor_absoluteX="8dp" />
     <ImageView
@@ -27,7 +27,10 @@
         android:id="@+id/s"
         android:text="Buy Product"
         tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

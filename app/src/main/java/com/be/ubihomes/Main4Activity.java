@@ -1,6 +1,5 @@
 package com.be.ubihomes;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -31,15 +30,18 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         //Intent intent = new Intent(Main4Activity.this,Main3Activity.class);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+//        Bundle bundle = getIntent().getExtras();
+//        String path = bundle.getString("PATH");
+
 
         btn= (Button) findViewById(R.id.s);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Main4Activity.this,Main3Activity.class);
+                //Intent intent = new Intent(Main4Activity.this,Main3Activity.class);
                 //startActivity(new Intent(Main4Activity.this,Main3Activity.class));
-                String imgs = "R.drawable.bb";
-                startActivity(intent);
+                //String imgs = "R.drawable.bb";
+                //startActivity(intent);
             }
         });
 
@@ -53,18 +55,27 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         String pathDir2 = baseDir + "/Android/data/com.mypackage.myapplication/";
 
         product=(ImageView)findViewById(R.id.product);
-        product.setImageResource(R.drawable.tv1);
+        //product.setImageResource(R.drawable.tv1);
         Uri imgUri= Uri.parse("file:///sdcard/download/success.png");
         String mainu=imgUri.toString();
         Toast.makeText(getApplicationContext(),mainu,Toast.LENGTH_SHORT).show();
         product.setImageURI(imgUri);
         product.setOnTouchListener(this);
 
-        imageView = (ImageView) findViewById(R.id.imgView);
-        imageView.setImageResource(R.drawable.bb);
 
-        Bundle bundle = getIntent().getExtras();
-        String receiver = bundle.getString("img");
+        imageView = (ImageView) findViewById(R.id.productBack);
+
+
+        //imageView.setImageURI(Uri.parse(path));
+        /*Uri uri = Uri.parse("file:///sdcard/Android/data/com.be.ubihomes/files/"+path);
+
+        String na = uri.toString();
+        Toast.makeText(getApplicationContext(),na,Toast.LENGTH_SHORT).show();
+        imageView.setImageURI(uri);*/
+//        imageView.setImageResource(Integer.parseInt("file:///sdcard/Android/data/com.be.ubihomes/files/"+path));
+
+        /*Bundle bundle = getIntent().getExtras();
+        String receiver = bundle.getString("img");*/
         //Toast.makeText(Main4Activity.this,receiver,Toast.LENGTH_SHORT).show();
 
 

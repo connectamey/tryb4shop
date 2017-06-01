@@ -2,11 +2,7 @@ package com.be.ubihomes;
 
 import android.annotation.TargetApi;
 import android.app.DownloadManager;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -80,6 +76,7 @@ public class Main3Activity extends ActionBarActivity {
 
         Bundle bundle = getIntent().getExtras();
         String name = bundle.getString("NAME");
+        final String path = bundle.getString("PATH");
         String type_length = bundle.getString("LEN");
         String type_height = bundle.getString("HEI");
 
@@ -125,26 +122,22 @@ public class Main3Activity extends ActionBarActivity {
                     DownloadManager dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
                     File folder1 = new File("/sdcard/download/success.png");
                     boolean delete=folder1.delete();
-                    Toast.makeText(getApplicationContext(),"wow"+delete,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"wow "+delete,Toast.LENGTH_SHORT).show();
 
                     if (folder1.exists()){
+
+
                     }else {
-
-
                         dm.enqueue(request);
+
                         Toast.makeText(Main3Activity.this, "Downloading File", //To notify the Client that the file is being downloaded
                                 Toast.LENGTH_LONG).show();
 
+                        startActivity(new Intent(Main3Activity.this,Main4Activity.class));
                     }
-                    //Toast.makeText(Main3Activity.this, url, Toast.LENGTH_SHORT).show();
-//                    dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-//                    DownloadManager.Request request = new DownloadManager.Request(
-//                            Uri.parse(url));
-//                    enqueue = dm.enqueue(request);
-                    /*Intent intent = new Intent(Main3Activity.this,Main4Activity.class);
-                    startActivity(intent);*/
+
                 } else {
-                    //Toast.makeText(Main3Activity.this, "AAAAAAAeeeeee", Toast.LENGTH_SHORT).show();
+
                 }
 
             }
@@ -154,16 +147,16 @@ public class Main3Activity extends ActionBarActivity {
         progressBar = ((ProgressBar) findViewById(R.id.progress_loader));
 
 
-        btn = (Button) findViewById(R.id.s);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Main3Activity.this, Main4Activity.class);
-                String img = "R.drawable.bb";
-                intent.putExtra("img", img);
-                startActivity(intent);
-            }
-        });
+//        btn = (Button) findViewById(R.id.s);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Main3Activity.this, Main4Activity.class);
+//                //Intent intent = new Intent(MainActivity.this,Main3Activity.class);
+//                intent.putExtra("IMGPath",path);
+//                startActivity(intent);
+//            }
+//        });
 
 
         //filtering logic
@@ -228,7 +221,7 @@ public class Main3Activity extends ActionBarActivity {
             break;
             case "Television": {
                 //Toast.makeText(Main3Activity.this, "in Television category"+"  "+dLength+"   "+dHeight, Toast.LENGTH_SHORT).show();
-                if (dLength < 73.6 && dHeight < 43.2) {
+                if (dLength>44.79&&dLength < 73.6 && dHeight>24.89&&dHeight < 43.2) {
                     webView.loadUrl(TV_1);
                 } else if (dLength > 72.4 && dLength < 97.7 && dHeight > 50.3 && dHeight < 57.9) {
                     webView.loadUrl(TV_2);
