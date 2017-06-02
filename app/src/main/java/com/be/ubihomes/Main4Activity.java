@@ -1,15 +1,21 @@
 package com.be.ubihomes;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+
+import static android.R.attr.name;
 
 public class Main4Activity extends ActionBarActivity implements View.OnTouchListener {
     ImageView imageView;
@@ -52,7 +58,7 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
 
         String fileName2 = "stored_image.jpg";
         String baseDir2 = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String pathDir2 = baseDir + "/Android/data/com.mypackage.myapplication/";
+        String pathDir2 = baseDir + "/Android/data/com.be.ubihomes/";
 
         product=(ImageView)findViewById(R.id.product);
         //product.setImageResource(R.drawable.tv1);
@@ -62,9 +68,30 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         product.setImageURI(imgUri);
         product.setOnTouchListener(this);
 
+        Bundle bundle = getIntent().getExtras();
+        String receiver = bundle.getString("PATH");
+        Double dlen=bundle.getDouble("DLEN");
+        Double dhei=bundle.getDouble("DHEI");
+//        int idlen=dlen.intValue();
+//        int idhei=dhei.intValue();
+//        int idlen=400;
+//        int idhei=400;
+        product.getLayoutParams().height=400;
+        product.getLayoutParams().width=400;
 
+        Log.d("data","received "+name+" data\n"+"DLength:"+dlen+"\n"+"Height:"+dhei);
+
+
+        Toast.makeText(Main4Activity.this,receiver+"\n"+dlen+"\n"+dhei,Toast.LENGTH_SHORT).show();
+
+
+        Context mContext;
         imageView = (ImageView) findViewById(R.id.productBack);
-
+        String imgUrl ="file:///sdcard/android/data/com.be.ubihomes/files/"+receiver;
+        Glide.with(this).load(imgUrl)
+                .thumbnail(0.5f)
+                .into(imageView);
+       // Uri imgUri= Uri.parse("file:///sdcard/download/success.png");
 
         //imageView.setImageURI(Uri.parse(path));
         /*Uri uri = Uri.parse("file:///sdcard/Android/data/com.be.ubihomes/files/"+path);
@@ -74,9 +101,6 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         imageView.setImageURI(uri);*/
 //        imageView.setImageResource(Integer.parseInt("file:///sdcard/Android/data/com.be.ubihomes/files/"+path));
 
-        /*Bundle bundle = getIntent().getExtras();
-        String receiver = bundle.getString("img");*/
-        //Toast.makeText(Main4Activity.this,receiver,Toast.LENGTH_SHORT).show();
 
 
 

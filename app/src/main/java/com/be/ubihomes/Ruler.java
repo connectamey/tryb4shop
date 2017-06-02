@@ -26,8 +26,11 @@ public class Ruler {
 
 
         double reference = getDistance(ref1, ref2);
+        Log.d("reference px ","good "+reference);
         //double reference_two = getDistance(ref3, ref4);
         double measurement = getDistance(m1, m2);
+        Log.d("LengthDPI","m1-2 :"+measurement);
+
         //double height = getDistance(n1, n2);
 
         measurement = (measurement * scale) / reference; //Get the actual distance
@@ -51,9 +54,10 @@ public class Ruler {
 
         //double reference = getDistance(ref3, ref4);
         double reference = getDistance(ref3, ref4);
+        Log.d("RefenceDPI","ref3-4 :"+reference);
         //double measurement = getDistance(n1, n2);
         double height = getDistance(n1, n2);
-
+        Log.d("HeightDPI","refn1-2 :"+height);
         height = (height * scale) / reference; //Get the actual distance
         //Convert to the right unit
         height = convertUnitsHeight(inputUnitHeightIndex, reference, outputUnitHeightIndex, height);

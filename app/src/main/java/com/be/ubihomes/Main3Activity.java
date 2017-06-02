@@ -76,12 +76,13 @@ public class Main3Activity extends ActionBarActivity {
 
         Bundle bundle = getIntent().getExtras();
         String name = bundle.getString("NAME");
-        final String path = bundle.getString("PATH");
+        final String m3path = bundle.getString("PATH");
+        Toast.makeText(Main3Activity.this,m3path,Toast.LENGTH_SHORT).show();
         String type_length = bundle.getString("LEN");
         String type_height = bundle.getString("HEI");
 
-        Double dLength = Double.parseDouble(type_length);
-        Double dHeight = Double.parseDouble(type_height);
+        final Double dLength = Double.parseDouble(type_length);
+        final Double dHeight = Double.parseDouble(type_height);
 
         String Portrait_1 = getResources().getString(R.string.Potrails10);
         String Portrait_2 = getResources().getString(R.string.Potrails20);
@@ -133,7 +134,7 @@ public class Main3Activity extends ActionBarActivity {
                         Toast.makeText(Main3Activity.this, "Downloading File", //To notify the Client that the file is being downloaded
                                 Toast.LENGTH_LONG).show();
 
-                        startActivity(new Intent(Main3Activity.this,Main4Activity.class));
+                        //startActivity(new Intent(Main3Activity.this,Main4Activity.class));
                     }
 
                 } else {
@@ -147,16 +148,18 @@ public class Main3Activity extends ActionBarActivity {
         progressBar = ((ProgressBar) findViewById(R.id.progress_loader));
 
 
-//        btn = (Button) findViewById(R.id.s);
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Main3Activity.this, Main4Activity.class);
-//                //Intent intent = new Intent(MainActivity.this,Main3Activity.class);
-//                intent.putExtra("IMGPath",path);
-//                startActivity(intent);
-//            }
-//        });
+        btn = (Button) findViewById(R.id.s);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main3Activity.this, Main4Activity.class);
+                //Intent intent = new Intent(MainActivity.this,Main3Activity.class);
+                intent.putExtra("PATH",m3path);
+                intent.putExtra("DLEN",dLength);
+                intent.putExtra("DHEI",dHeight);
+                startActivity(intent);
+            }
+        });
 
 
         //filtering logic

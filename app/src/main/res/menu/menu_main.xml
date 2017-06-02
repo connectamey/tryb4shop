@@ -6,7 +6,7 @@
 
     <item android:id="@+id/action_choosePhoto" android:title="Choose Photo"
         android:orderInCategory="1" app:showAsAction="always"
-        android:icon="@drawable/plus"/>
+        android:icon="@drawable/plus" />
     <item android:id="@+id/action_cleanStorage" android:title="@string/action_cleanStorage"
         android:orderInCategory="2" app:showAsAction="always"
         android:icon="@drawable/delete"/>

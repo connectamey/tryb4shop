@@ -88,7 +88,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
+//        inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -121,15 +121,15 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
             photoFile = null;
             try {
                 String imgp;
-                photoFile = createImageFile();
-                imgp=photoFile.getName().toString();
+               photoFile = createImageFile();
+                imgp=photoFile.getName();
 
 
                 Toast.makeText(MainActivity.this,imgp,Toast.LENGTH_SHORT).show();
 
 
-                Intent intent = new Intent(MainActivity.this,Main3Activity.class);
-                intent.putExtra("PATH",imgp);
+//                Intent intent = new Intent(MainActivity.this,Main3Activity.class);
+//                intent.putExtra("PATH",imgp);
 
             } catch (IOException ex) {
                 // Error occurred while creating the File
@@ -260,6 +260,8 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
                     DecimalFormat decimalFormat = new DecimalFormat("#.##");
                     Bundle bundle = getIntent().getExtras();
                     String name = bundle.getString("NAME");
+                    String fpath=photoFile.getName();
+                    intent.putExtra("PATH",fpath);
                     intent.putExtra("NAME",name);
                     intent.putExtra("LEN",decimalFormat.format(result));
                     intent.putExtra("HEI",decimalFormat.format(resultHeight));
