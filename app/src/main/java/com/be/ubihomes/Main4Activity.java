@@ -82,7 +82,7 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         Log.d("data","received "+name+" data\n"+"DLength:"+dlen+"\n"+"Height:"+dhei);
 
 
-        Toast.makeText(Main4Activity.this,receiver+"\n"+dlen+"\n"+dhei,Toast.LENGTH_SHORT).show();
+//        Toast.makeText(Main4Activity.this,receiver+"\n"+dlen+"\n"+dhei,Toast.LENGTH_SHORT).show();
 
 
         Context mContext;
