@@ -37,7 +37,6 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
     private double resultHeight;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
 
 
