@@ -31,8 +31,6 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         setContentView(R.layout.activity_main4);
 
 
-
-
         //Intent intent = new Intent(Main4Activity.this,Main3Activity.class);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -72,10 +70,6 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         String receiver = bundle.getString("PATH");
         Double dlen=bundle.getDouble("DLEN");
         Double dhei=bundle.getDouble("DHEI");
-//        int idlen=dlen.intValue();
-//        int idhei=dhei.intValue();
-//        int idlen=400;
-//        int idhei=400;
         product.getLayoutParams().height=400;
         product.getLayoutParams().width=400;
 

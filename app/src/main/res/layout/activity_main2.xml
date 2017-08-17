@@ -13,7 +13,7 @@
         <ImageButton
             android:layout_height="160dp"
             android:layout_width="160dp"
-            android:background="@drawable/paint"
+            android:background="@drawable/baby"
             android:layout_weight="1"
             android:id="@+id/paint"
             android:onClick="openPaint"
@@ -24,7 +24,7 @@
         <ImageButton
             android:layout_height="160dp"
             android:layout_width="160dp"
-            android:background="@drawable/bed"
+            android:background="@drawable/top"
             android:layout_weight="1"
             android:id="@+id/bed"
             android:onClick="openBed"
@@ -39,7 +39,7 @@
         <ImageButton
             android:layout_height="160dp"
             android:layout_width="160dp"
-            android:background="@drawable/fridge"
+            android:background="@drawable/jeans"
             android:layout_weight="1"
             android:id="@+id/fridge"
             android:onClick="openFridge"
@@ -50,7 +50,7 @@
         <ImageButton
             android:layout_height="160dp"
             android:layout_width="160dp"
-            android:background="@drawable/sofa"
+            android:background="@drawable/kurta"
             android:layout_weight="1"
             android:id="@+id/sofa"
             android:onClick="openSofa"
@@ -64,7 +64,7 @@
         <ImageButton
             android:layout_height="160dp"
             android:layout_width="160dp"
-            android:background="@drawable/table"
+            android:background="@drawable/shirt"
             android:layout_weight="1"
             android:id="@+id/table"
             android:onClick="openTable"
@@ -75,7 +75,7 @@
         <ImageButton
             android:layout_height="160dp"
             android:layout_width="160dp"
-            android:background="@drawable/tv"
+            android:background="@drawable/shoes"
             android:layout_weight="1"
             android:id="@+id/tv"
             android:onClick="openTV"

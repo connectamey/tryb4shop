@@ -67,7 +67,6 @@ public class Ruler {
 
     }
 
-
     private static double getDistance(Point p1, Point p2){
         double x = Math.pow(p2.x - p1.x, 2);
         double y = Math.pow(p2.y - p1.y, 2);
