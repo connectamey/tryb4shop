@@ -42,7 +42,7 @@
         <activity
             android:name=".MainActivity"
             android:label="Capture Photo"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Main3Activity"
             android:label="Webview"

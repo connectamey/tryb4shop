@@ -13,7 +13,7 @@
         <ImageButton
             android:layout_height="160dp"
             android:layout_width="160dp"
-            android:background="@drawable/baby"
+            android:background="@drawable/overalls"
             android:layout_weight="1"
             android:id="@+id/paint"
             android:onClick="openPaint"

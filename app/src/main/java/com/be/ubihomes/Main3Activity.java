@@ -59,11 +59,6 @@ public class Main3Activity extends ActionBarActivity {
 
         searchHistory = new ArrayList<String>();
 
-
-
-
-
-
         final WebView webView = (WebView) findViewById(R.id.webView1);
         WebSettings webSettings = webView.getSettings();
         webSettings.setDomStorageEnabled(true);
