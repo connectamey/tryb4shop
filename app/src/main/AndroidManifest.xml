@@ -49,7 +49,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Main4Activity"
             android:label="DragImage"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             ></activity>
     </application>
