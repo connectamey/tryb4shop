@@ -24,7 +24,7 @@
         <ImageButton
             android:layout_height="160dp"
             android:layout_width="160dp"
-            android:background="@drawable/top"
+            android:background="@drawable/palazzo"
             android:layout_weight="1"
             android:id="@+id/bed"
             android:onClick="openBed"
@@ -39,7 +39,7 @@
         <ImageButton
             android:layout_height="160dp"
             android:layout_width="160dp"
-            android:background="@drawable/jeans"
+            android:background="@drawable/tracks"
             android:layout_weight="1"
             android:id="@+id/fridge"
             android:onClick="openFridge"
