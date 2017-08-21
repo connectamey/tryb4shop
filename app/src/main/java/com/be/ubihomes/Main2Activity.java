@@ -20,7 +20,6 @@ public class Main2Activity extends ActionBarActivity {
             R.drawable.bg5,
             R.drawable.bg6,
             R.drawable.bg7,
-
     };
 
     @Override
