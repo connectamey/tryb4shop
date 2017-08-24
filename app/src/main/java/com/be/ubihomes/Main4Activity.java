@@ -114,7 +114,7 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
                 product.setRotation(rot + 2);
                 Glide.with(context).load(imgUrl)
                         .thumbnail(0.5f)
-                        .into(imageView);
+                        .into(imageView); //clockwise rotation
 
             }
         });
@@ -127,7 +127,7 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
                 product.setRotation(rot - 2);
                 Glide.with(context).load(imgUrl)
                         .thumbnail(0.5f)
-                        .into(imageView);
+                        .into(imageView);  //anticlockwise rotation
 
             }
         });
