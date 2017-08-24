@@ -13,6 +13,7 @@
         android:gravity="center"
         android:id="@+id/productBack" />
     <ImageView
+        android:rotation="0"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/product"
@@ -48,7 +49,7 @@
         android:text="-" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/anticlock"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -57,12 +58,12 @@
         android:text="A" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/clock"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/button3"
-        android:layout_toStartOf="@+id/button3"
+        android:layout_toLeftOf="@+id/anticlock"
+        android:layout_toStartOf="@+id/anticlock"
         android:text="C" />
 
 

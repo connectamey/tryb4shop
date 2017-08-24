@@ -22,7 +22,7 @@ import static android.R.attr.process;
 public class Main4Activity extends ActionBarActivity implements View.OnTouchListener {
     ImageView imageView;
     ImageView product;
-    Button btn, btnplus,btnminus;
+    Button btn, btnplus,btnminus,btnclock,btnanticlock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,8 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
 //        String path = bundle.getString("PATH");
         btnminus=(Button)findViewById(R.id.minus);
         btnplus=(Button)findViewById(R.id.plus);
+        btnclock=(Button)findViewById(R.id.clock);
+        btnanticlock=(Button)findViewById(R.id.anticlock);
         btn= (Button) findViewById(R.id.s);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +78,7 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         product.getLayoutParams().width=400;
         Log.d("data","received "+name+" data\n"+"DLength:"+dlen+"\n"+"Height:"+dhei);
         final Context context=getApplicationContext();
+
         btnplus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,6 +92,7 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
 
             }
         });
+
         btnminus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,6 +100,31 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
                 int mwidth=product.getLayoutParams().width;
                 product.getLayoutParams().height=mheight-10;
                 product.getLayoutParams().width=mwidth-10;
+                Glide.with(context).load(imgUrl)
+                        .thumbnail(0.5f)
+                        .into(imageView);
+
+            }
+        });
+
+        btnclock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                float rot = product.getRotation();
+                product.setRotation(rot + 2);
+                Glide.with(context).load(imgUrl)
+                        .thumbnail(0.5f)
+                        .into(imageView);
+
+            }
+        });
+
+
+        btnanticlock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                float rot = product.getRotation();
+                product.setRotation(rot - 2);
                 Glide.with(context).load(imgUrl)
                         .thumbnail(0.5f)
                         .into(imageView);
