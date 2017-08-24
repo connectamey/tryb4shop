@@ -51,20 +51,20 @@
     <Button
         android:id="@+id/anticlock"
         android:layout_width="50dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/minus"
         android:layout_toStartOf="@+id/minus"
-        android:text="A" />
+        android:background="@drawable/anti" />
 
     <Button
         android:id="@+id/clock"
         android:layout_width="50dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/anticlock"
         android:layout_toStartOf="@+id/anticlock"
-        android:text="C" />
+        android:background="@drawable/clockwise"/>
 
 
 </RelativeLayout>
