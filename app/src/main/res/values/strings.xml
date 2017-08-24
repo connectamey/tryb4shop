@@ -23,10 +23,10 @@
     <string name="btn_OK">OK</string>
     <string name="btn_cancel">Cancel</string>
 
-    <string name="TV20">https://ubiquitoushomes.com/product-category/television/?filter_screen=20-to-30</string>
-    <string name="TV30">https://ubiquitoushomes.com/product-category/television/?filter_screen=30-to-40</string>
-    <string name="TV40">https://ubiquitoushomes.com/product-category/television/?filter_screen=40-to-50</string>
-    <string name="TV50">https://ubiquitoushomes.com/product-category/television/?filter_screen=50-to-60</string>
+    <string name="Shoes6">https://tryb4.shop/product-category/shoes/?filter_shoe-size=6-24-cm</string>
+    <string name="Shoes8">https://tryb4.shop/product-category/shoes/?filter_shoe-size=8-26-cm</string>
+    <string name="Shoes10">https://tryb4.shop/product-category/shoes/?filter_shoe-size=10-28-cm</string>
+    <string name="Shoes12">https://tryb4.shop/product-category/shoes/?filter_shoe-size=12-30-cm</string>
     <string name="Bed180">https://ubiquitoushomes.com/product-category/bed/?filter_bed-size=180-to-200-cm</string>
     <string name="Bed200">https://ubiquitoushomes.com/product-category/bed/?filter_bed-size=200-to-220-cm</string>
     <string name="Table40">https://ubiquitoushomes.com/product-category/tables/?filter_table-size=40-to-80-cm</string>
@@ -42,7 +42,7 @@
     <string name="Fridge">https://ubiquitoushomes.com/product-category/refrigerator/</string>
     <string name="Sofa">https://ubiquitoushomes.com/product-category/sofa/</string>
     <string name="Table">https://ubiquitoushomes.com/product-category/tables/</string>
-    <string name="TV">https://ubiquitoushomes.com/product-category/television/</string>
+    <string name="Shoes">https://tryb4.shop/product-category/shoes/</string>
     <string name="Length">Reference Length</string>
     <string name="Height">Reference Height</string>
 </resources>

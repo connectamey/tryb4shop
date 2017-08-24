@@ -79,7 +79,7 @@ public class Main2Activity extends ActionBarActivity {
     public void openTV(View view) {
 
         Intent intent = new Intent(this,MainActivity.class);
-        String name = "Television";
+        String name = "Shoes";
         intent.putExtra("NAME",name);
         startActivity(intent);
     }

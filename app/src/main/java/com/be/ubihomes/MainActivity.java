@@ -87,7 +87,6 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -264,8 +263,6 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
                     intent.putExtra("NAME",name);
                     intent.putExtra("LEN",decimalFormat.format(result));
                     intent.putExtra("HEI",decimalFormat.format(resultHeight));
-
-
                     Toast.makeText(MainActivity.this,"Category :"+" "+name+"\n\n"+"Length : "+" "+decimalFormat.format(result)+"\nHeight : "+" "+decimalFormat.format(resultHeight),Toast.LENGTH_SHORT).show();
                     Log.d("data","received "+name+" data\n"+"Length:"+decimalFormat.format(result)+"\nHeight:"+decimalFormat.format(resultHeight));
                     startActivity(intent);

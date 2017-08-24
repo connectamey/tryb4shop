@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -16,14 +17,12 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 import static android.R.attr.name;
+import static android.R.attr.process;
 
 public class Main4Activity extends ActionBarActivity implements View.OnTouchListener {
     ImageView imageView;
     ImageView product;
-    Button btn;
-    //@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN);
-
-
+    Button btn, btnplus,btnminus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +35,8 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
 
 //        Bundle bundle = getIntent().getExtras();
 //        String path = bundle.getString("PATH");
-
-
+        btnminus=(Button)findViewById(R.id.minus);
+        btnplus=(Button)findViewById(R.id.plus);
         btn= (Button) findViewById(R.id.s);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,37 +69,48 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         String receiver = bundle.getString("PATH");
         Double dlen=bundle.getDouble("DLEN");
         Double dhei=bundle.getDouble("DHEI");
+        final String imgUrl ="file:///sdcard/android/data/com.be.ubihomes/files/"+receiver;
+        imageView = (ImageView) findViewById(R.id.productBack);
+
         product.getLayoutParams().height=400;
         product.getLayoutParams().width=400;
-
         Log.d("data","received "+name+" data\n"+"DLength:"+dlen+"\n"+"Height:"+dhei);
+        final Context context=getApplicationContext();
+        btnplus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            int oheight=product.getLayoutParams().height;
+            int owidth=product.getLayoutParams().width;
+            product.getLayoutParams().height=oheight+10;
+            product.getLayoutParams().width=owidth+10;
+            Glide.with(context).load(imgUrl)
+                        .thumbnail(0.5f)
+                        .into(imageView);
 
+            }
+        });
+        btnminus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int mheight=product.getLayoutParams().height;
+                int mwidth=product.getLayoutParams().width;
+                product.getLayoutParams().height=mheight-10;
+                product.getLayoutParams().width=mwidth-10;
+                Glide.with(context).load(imgUrl)
+                        .thumbnail(0.5f)
+                        .into(imageView);
 
-//        Toast.makeText(Main4Activity.this,receiver+"\n"+dlen+"\n"+dhei,Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         Context mContext;
-        imageView = (ImageView) findViewById(R.id.productBack);
-        String imgUrl ="file:///sdcard/android/data/com.be.ubihomes/files/"+receiver;
+
         Glide.with(this).load(imgUrl)
                 .thumbnail(0.5f)
                 .into(imageView);
-       // Uri imgUri= Uri.parse("file:///sdcard/download/success.png");
-
-        //imageView.setImageURI(Uri.parse(path));
-        /*Uri uri = Uri.parse("file:///sdcard/Android/data/com.be.ubihomes/files/"+path);
-
-        String na = uri.toString();
-        Toast.makeText(getApplicationContext(),na,Toast.LENGTH_SHORT).show();
-        imageView.setImageURI(uri);*/
-//        imageView.setImageResource(Integer.parseInt("file:///sdcard/Android/data/com.be.ubihomes/files/"+path));
-
-
-
 
     }
-
-
     float x,y=0.0f;
     boolean moving = false;
 

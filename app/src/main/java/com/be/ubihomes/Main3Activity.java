@@ -94,10 +94,10 @@ public class Main3Activity extends ActionBarActivity {
         String Table_1 = getResources().getString(R.string.Table40);
         String Table_2 = getResources().getString(R.string.Table80);
 
-        String TV_1 = getResources().getString(R.string.TV20);
-        String TV_2 = getResources().getString(R.string.TV30);
-        String TV_3 = getResources().getString(R.string.TV40);
-        String TV_4 = getResources().getString(R.string.TV50);
+        String TV_1 = getResources().getString(R.string.Shoes6);
+        String TV_2 = getResources().getString(R.string.Shoes8);
+        String TV_3 = getResources().getString(R.string.Shoes10);
+        String TV_4 = getResources().getString(R.string.Shoes12);
 
 
         //final WebView webView=(WebView)findViewById(R.id.webView1);
@@ -217,8 +217,7 @@ public class Main3Activity extends ActionBarActivity {
                 }
             }
             break;
-            case "Television": {
-                //Toast.makeText(Main3Activity.this, "in Television category"+"  "+dLength+"   "+dHeight, Toast.LENGTH_SHORT).show();
+            case "Shoes": {
                 if (dLength>44.79&&dLength < 73.6 && dHeight>24.89&&dHeight < 43.2) {
                     webView.loadUrl(TV_1);
                 } else if (dLength > 72.4 && dLength < 97.7 && dHeight > 50.3 && dHeight < 57.9) {
@@ -229,7 +228,7 @@ public class Main3Activity extends ActionBarActivity {
                     webView.loadUrl(TV_4);
                 } else {
                     Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
-                    webView.loadUrl(getResources().getString(R.string.TV));
+                    webView.loadUrl(getResources().getString(R.string.Shoes));
                 }
             }
             break;
