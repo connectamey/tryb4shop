@@ -26,8 +26,8 @@
             android:layout_width="160dp"
             android:background="@drawable/palazzo"
             android:layout_weight="1"
-            android:id="@+id/bed"
-            android:onClick="openBed"
+            android:id="@+id/palazzo"
+            android:onClick="openPalazzo"
             android:layout_margin="16dp"
 
             />

@@ -44,10 +44,10 @@ public class Main2Activity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void openBed(View view) {
+    public void openPalazzo(View view) {
 
         Intent intent = new Intent(Main2Activity.this,MainActivity.class);
-        String name = "Bed";
+        String name = "Palazzo";
         intent.putExtra("NAME",name);
         startActivity(intent);
     }

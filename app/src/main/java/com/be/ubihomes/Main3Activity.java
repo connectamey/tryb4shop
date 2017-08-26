@@ -181,7 +181,7 @@ public class Main3Activity extends ActionBarActivity {
                 }
             }
             break;
-            case "Bed": {
+            case "Palazzos": {
                 if (dLength <=  101.6) {
                     webView.loadUrl(Palazzo_1);
                 } else if (dLength < 101.6 && dLength > 127 ) {
