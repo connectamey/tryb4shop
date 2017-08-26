@@ -83,8 +83,9 @@ public class Main3Activity extends ActionBarActivity {
         String Portrait_1 = getResources().getString(R.string.Potrails10);
         String Portrait_2 = getResources().getString(R.string.Potrails20);
 
-        String Bed_1 = getResources().getString(R.string.Bed180);
-        String Bed_2 = getResources().getString(R.string.Bed200);
+        String Palazzo_1 = getResources().getString(R.string.Palazzo);
+        String Palazzo_2 = getResources().getString(R.string.Palazzo2);
+        String Palazzo_3 = getResources().getString(R.string.Palazzo3);
 
         String Fridge_1 = getResources().getString(R.string.Refrigerator30);
         String Fridge_2 = getResources().getString(R.string.Refrigerator100);
@@ -168,22 +169,26 @@ public class Main3Activity extends ActionBarActivity {
         switch (name) {
 
             case "Painting": {
-                if (dLength < 21 && dLength > 11 && dHeight < 20 && dHeight > 11) {
+                if (dLength < 40 && dLength > 11) {
                     //webView.loadUrl("https://ubiquitoushomes.com/product-category/potraits/?filter_painting-size=10-to-20-inch");
                     webView.loadUrl(Portrait_1);
-                } else if (dLength < 24 && dLength > 15 && dHeight < 24 && dHeight > 15) {
+                } else if (dLength < 24 && dLength > 15) {
                     webView.loadUrl(Portrait_2);
-                } else {
+                }
+                else{
                     Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
                     webView.loadUrl(getResources().getString(R.string.Painting));
                 }
             }
             break;
             case "Bed": {
-                if (dLength < 200 && dLength > 183 && dHeight < 100 && dHeight > 63.5) {
-                    webView.loadUrl(Bed_1);
-                } else if (dLength < 218.4 && dLength > 213.4 && dHeight < 109 && dHeight > 102) {
-                    webView.loadUrl(Bed_2);
+                if (dLength <=  101.6) {
+                    webView.loadUrl(Palazzo_1);
+                } else if (dLength < 101.6 && dLength > 127 ) {
+                    webView.loadUrl(Palazzo_2);
+                } else if(dLength <= 127) {
+                    webView.loadUrl(Palazzo_3);
+
                 } else {
                     Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
                     webView.loadUrl(getResources().getString(R.string.Bed));
