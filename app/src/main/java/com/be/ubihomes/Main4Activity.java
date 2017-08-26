@@ -1,6 +1,7 @@
 package com.be.ubihomes;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -23,7 +24,7 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
     ImageView imageView;
     ImageView product;
     Button btn, btnplus,btnminus,btnclock,btnanticlock;
-
+    String finalurl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,14 +40,13 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         btnplus=(Button)findViewById(R.id.plus);
         btnclock=(Button)findViewById(R.id.clock);
         btnanticlock=(Button)findViewById(R.id.anticlock);
-        btn= (Button) findViewById(R.id.s);
+        btn= (Button) findViewById(R.id.buyproduct);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(Main4Activity.this,Main3Activity.class);
-                //startActivity(new Intent(Main4Activity.this,Main3Activity.class));
-                //String imgs = "R.drawable.bb";
-                //startActivity(intent);
+                Intent intent = new Intent(Main4Activity.this,Main5Activity.class);
+                intent.putExtra("LOAD4URL",finalurl);
+                startActivity(intent);
             }
         });
 
@@ -71,6 +71,7 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         String receiver = bundle.getString("PATH");
         Double dlen=bundle.getDouble("DLEN");
         Double dhei=bundle.getDouble("DHEI");
+        finalurl=bundle.getString("BUYU");
         final String imgUrl ="file:///sdcard/android/data/com.be.ubihomes/files/"+receiver;
         imageView = (ImageView) findViewById(R.id.productBack);
 

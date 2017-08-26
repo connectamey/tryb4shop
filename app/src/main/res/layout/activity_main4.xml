@@ -23,7 +23,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/s"
+        android:id="@+id/buyproduct"
         android:text="Buy Product"
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="0dp"
@@ -37,7 +37,8 @@
         android:layout_height="wrap_content"
         android:text="+"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/s" />
+        android:layout_toLeftOf="@+id/buyproduct"
+        android:layout_toStartOf="@+id/buyproduct" />
 
     <Button
         android:id="@+id/minus"

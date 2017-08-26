@@ -78,7 +78,7 @@
             android:background="@drawable/shoes"
             android:layout_weight="1"
             android:id="@+id/tv"
-            android:onClick="openTV"
+            android:onClick="openShoes"
             android:layout_margin="16dp"
 
             />

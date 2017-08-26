@@ -10,7 +10,6 @@ import java.util.List;
  * Class that handles all the mathematical operations.
  */
 public class Ruler {
-
     private Ruler(){}
 
     public static double compute(List<Point> points, double scale, int inputUnitIndex, int outputUnitIndex){

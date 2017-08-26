@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebSettings;
@@ -27,7 +28,7 @@ public class Main3Activity extends ActionBarActivity {
     Button btn;
     private long enqueue;
     private DownloadManager dm;
-
+    public String buyurl;
     private ArrayList<String> searchHistory;
 
     //String fName = "chamya.png";
@@ -94,16 +95,21 @@ public class Main3Activity extends ActionBarActivity {
         String Table_1 = getResources().getString(R.string.Table40);
         String Table_2 = getResources().getString(R.string.Table80);
 
-        String TV_1 = getResources().getString(R.string.Shoes6);
-        String TV_2 = getResources().getString(R.string.Shoes8);
-        String TV_3 = getResources().getString(R.string.Shoes10);
-        String TV_4 = getResources().getString(R.string.Shoes12);
-
+        String Shoes_1 = getResources().getString(R.string.Shoes4);
+        String Shoes_2 = getResources().getString(R.string.Shoes6);
+        String Shoes_3 = getResources().getString(R.string.Shoes8);
+        String Shoes_4 = getResources().getString(R.string.Shoes10);
 
         //final WebView webView=(WebView)findViewById(R.id.webView1);
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
+
+               if (webView.getUrl().contains("buy")) {
+                  buyurl=webView.getUrl();
+                   Log.e("buyurl is", "this " + buyurl);
+               }
+
                 progressBar.setVisibility(View.INVISIBLE);
                 searchHistory.add(url);
                 //webView.loadUrl(url);
@@ -152,6 +158,7 @@ public class Main3Activity extends ActionBarActivity {
                 intent.putExtra("PATH",m3path);
                 intent.putExtra("DLEN",dLength);
                 intent.putExtra("DHEI",dHeight);
+                intent.putExtra("BUYU",buyurl);
                 startActivity(intent);
             }
         });
@@ -218,25 +225,23 @@ public class Main3Activity extends ActionBarActivity {
             }
             break;
             case "Shoes": {
-                if (dLength>44.79&&dLength < 73.6 && dHeight>24.89&&dHeight < 43.2) {
-                    webView.loadUrl(TV_1);
-                } else if (dLength > 72.4 && dLength < 97.7 && dHeight > 50.3 && dHeight < 57.9) {
-                    webView.loadUrl(TV_2);
-                } else if (dLength > 93 && dLength < 106 && dHeight > 56 && dHeight < 71) {
-                    webView.loadUrl(TV_3);
-                } else if (dLength > 106 && dHeight > 83) {
-                    webView.loadUrl(TV_4);
+                if (dLength <= 22) {
+                    webView.loadUrl(Shoes_1);
+                } else if (dLength > 22 && dLength < 24) {
+                    webView.loadUrl(Shoes_2);
+                } else if (dLength > 24 && dLength < 26) {
+                    webView.loadUrl(Shoes_3);
+                } else if (dLength > 26) {
+                    webView.loadUrl(Shoes_4);
                 } else {
-                    Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main3Activity.this, "Sorry !!! Product not available of this size.", Toast.LENGTH_SHORT).show();
                     webView.loadUrl(getResources().getString(R.string.Shoes));
                 }
             }
             break;
-
         }
 
-
-    }
+       }
 
     public void showDownload(View view) {
         Intent i = new Intent();

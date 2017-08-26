@@ -76,7 +76,7 @@ public class Main2Activity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void openTV(View view) {
+    public void openShoes(View view) {
 
         Intent intent = new Intent(this,MainActivity.class);
         String name = "Shoes";
