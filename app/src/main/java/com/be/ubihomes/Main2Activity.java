@@ -47,7 +47,7 @@ public class Main2Activity extends ActionBarActivity {
     public void openPalazzo(View view) {
 
         Intent intent = new Intent(Main2Activity.this,MainActivity.class);
-        String name = "Palazzo";
+        String name = "Palazzos";
         intent.putExtra("NAME",name);
         startActivity(intent);
     }

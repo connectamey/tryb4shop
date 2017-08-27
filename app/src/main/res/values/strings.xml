@@ -28,8 +28,9 @@
     <string name="Shoes8">https://tryb4.shop/product-category/shoes/?filter_shoe-size=8-26-cm</string>
     <string name="Shoes10">https://tryb4.shop/product-category/shoes/?filter_shoe-size=10-28-cm</string>
     <string name="Palazzo">https://tryb4.shop/product-category/palazzo/</string>
-    <string name="Palazzo2">https://tryb4.shop/product-category/palazzo/</string>
-    <string name="Palazzo3">https://tryb4.shop/product-category/palazzo/</string>
+    <string name="Palazzo30">https://tryb4.shop/?filter_palazzo-size=76-2-cm-30-inch</string>
+    <string name="Palazzo40">https://tryb4.shop/?filter_palazzo-size=101-6-cm-40-inch</string>
+    <string name="Palazzo50">https://tryb4.shop/?filter_palazzo-size=127-cm-50-inch</string>
     <string name="Table40">https://ubiquitoushomes.com/product-category/tables/?filter_table-size=40-to-80-cm</string>
     <string name="Table80">https://ubiquitoushomes.com/product-category/tables/?filter_table-size=80-to-120-cm</string>
     <string name="Potrails10">https://ubiquitoushomes.com/product-category/potraits/?filter_painting-size=10-to-20-inch</string>

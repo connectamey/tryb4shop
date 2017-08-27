@@ -12,13 +12,16 @@
         android:scaleType="fitCenter"
         android:gravity="center"
         android:id="@+id/productBack" />
+
     <ImageView
         android:rotation="0"
+        android:scaleType="centerCrop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/product"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="0dp" />
+       tools:layout_editor_absoluteY="10dp"
+        tools:layout_editor_absoluteX="10dp" />
+
 
     <Button
         android:layout_width="wrap_content"
