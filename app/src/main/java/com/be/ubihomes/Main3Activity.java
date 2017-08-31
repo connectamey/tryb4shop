@@ -80,21 +80,23 @@ public class Main3Activity extends ActionBarActivity {
         final Double dLength = Double.parseDouble(type_length);
         final Double dHeight = Double.parseDouble(type_height);
 
-        String Portrait_1 = getResources().getString(R.string.Potrails10);
-        String Portrait_2 = getResources().getString(R.string.Potrails20);
+        String Overalls_1 = getResources().getString(R.string.Overalls40);
+        String Overalls_2 = getResources().getString(R.string.Overalls60);
 
         String Palazzo_30 = getResources().getString(R.string.Palazzo30);
         String Palazzo_40 = getResources().getString(R.string.Palazzo40);
         String Palazzo_50 = getResources().getString(R.string.Palazzo50);
 
-        String Fridge_1 = getResources().getString(R.string.Refrigerator30);
-        String Fridge_2 = getResources().getString(R.string.Refrigerator100);
+        String Tracks_1 = getResources().getString(R.string.Tracks30);
+        String Tracks_2 = getResources().getString(R.string.Tracks70);
 
-        String Sofa_1 = getResources().getString(R.string.Sofa140);
-        String Sofa_2 = getResources().getString(R.string.Sofa170);
+        String Kurti_1 = getResources().getString(R.string.Kurti140);
+        String Kurti_2 = getResources().getString(R.string.Kurti170);
 
-        String Table_1 = getResources().getString(R.string.Table40);
-        String Table_2 = getResources().getString(R.string.Table80);
+        String TShirt_1 = getResources().getString(R.string.TShirt38);
+        String TShirt_2 = getResources().getString(R.string.TShirt40);
+        String TShirt_3 = getResources().getString(R.string.TShirt42);
+        String TShirt_4 = getResources().getString(R.string.TShirt44);
 
         String Shoes_1 = getResources().getString(R.string.Shoes4);
         String Shoes_2 = getResources().getString(R.string.Shoes6);
@@ -168,25 +170,25 @@ public class Main3Activity extends ActionBarActivity {
         //filtering logic
         switch (name) {
 
-            case "Painting": {
-                if (dLength < 40 && dLength > 11) {
+            case "Overalls": {
+                if (dLength < 60 && dLength > 40) {
                     //webView.loadUrl("https://ubiquitoushomes.com/product-category/potraits/?filter_painting-size=10-to-20-inch");
-                    webView.loadUrl(Portrait_1);
-                } else if (dLength < 24 && dLength > 15) {
-                    webView.loadUrl(Portrait_2);
+                    webView.loadUrl(Overalls_1);
+                } else if (dLength <70 && dLength > 60) {
+                    webView.loadUrl(Overalls_2);
                 }
                 else{
                     Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
-                    webView.loadUrl(getResources().getString(R.string.Painting));
+                    webView.loadUrl(getResources().getString(R.string.Overalls));
                 }
             }
             break;
             case "Palazzos": {
-                if (dLength <  101.6) {
+                if (dLength <=  101.6) {
                     webView.loadUrl(Palazzo_30);
-                } else if (dLength < 101.6 && dLength > 127 ) {
+                } else if (dLength > 101.6 && dLength < 127 ) {
                     webView.loadUrl(Palazzo_40);
-                } else if(dLength < 127) {
+                } else if(dLength >= 127 && dLength < 140) {
                     webView.loadUrl(Palazzo_50);
 
                 } else {
@@ -196,36 +198,40 @@ public class Main3Activity extends ActionBarActivity {
 
             }
             break;
-            case "Fridge": {
-                if (dLength < 55.5 && dLength > 30 && dHeight < 147 && dHeight > 36.1) {
-                    webView.loadUrl(Fridge_1);
-                } else if (dLength < 90.8 && dLength > 43 && dHeight < 179 && dHeight > 79.6) {
-                    webView.loadUrl(Fridge_2);
+            case "Tracks": {
+                if (dLength < 55.5 && dLength > 30) {
+                    webView.loadUrl(Tracks_1);
+                } else if (dLength < 90.8 && dLength > 43) {
+                    webView.loadUrl(Tracks_2);
                 } else {
                     Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
-                    webView.loadUrl(getResources().getString(R.string.Fridge));
+                    webView.loadUrl(getResources().getString(R.string.Tracks));
                 }
             }
             break;
-            case "Sofa": {
-                if (dLength < 76 && dLength > 72 && dHeight < 147.8 && dHeight > 142) {
-                    webView.loadUrl(Sofa_1);
-                } else if (dLength < 94 && dLength > 82 && dHeight < 230 && dHeight > 152.4) {
-                    webView.loadUrl(Sofa_2);
+            case "Kurti": {
+                if (dLength < 76 && dLength > 72) {
+                    webView.loadUrl(Kurti_1);
+                } else if (dLength < 94 && dLength > 82) {
+                    webView.loadUrl(Kurti_2);
                 } else {
                     Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
-                    webView.loadUrl(getResources().getString(R.string.Sofa));
+                    webView.loadUrl(getResources().getString(R.string.Kurti));
                 }
             }
             break;
-            case "Table": {
-                if (dLength < 88 && dLength > 45.72 && dHeight < 58 && dHeight > 40.64) {
-                    webView.loadUrl(Table_1);
-                } else if (dLength < 115 && dLength > 101.8 && dHeight < 75 && dHeight > 50.8) {
-                    webView.loadUrl(Table_2);
-                } else {
+            case "TShirt": {
+                if (dLength < 106.68 && dLength > 101.36) {
+                    webView.loadUrl(TShirt_1);
+                } else if (dLength < 111.76 && dLength > 106.68) {
+                    webView.loadUrl(TShirt_2);
+                }else if(dLength < 116.84 && dLength > 111.76){
+                    webView.loadUrl(TShirt_3);
+                }else if(dLength < 130 && dLength > 116.84){
+                    webView.loadUrl(TShirt_4);
+                }else {
                     Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
-                    webView.loadUrl(getResources().getString(R.string.Table));
+                    webView.loadUrl(getResources().getString(R.string.TShirt));
                 }
             }
             break;

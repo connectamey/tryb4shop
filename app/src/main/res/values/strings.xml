@@ -31,19 +31,21 @@
     <string name="Palazzo30">https://tryb4.shop/?filter_palazzo-size=76-2-cm-30-inch</string>
     <string name="Palazzo40">https://tryb4.shop/?filter_palazzo-size=101-6-cm-40-inch</string>
     <string name="Palazzo50">https://tryb4.shop/?filter_palazzo-size=127-cm-50-inch</string>
-    <string name="Table40">https://ubiquitoushomes.com/product-category/tables/?filter_table-size=40-to-80-cm</string>
-    <string name="Table80">https://ubiquitoushomes.com/product-category/tables/?filter_table-size=80-to-120-cm</string>
-    <string name="Potrails10">https://ubiquitoushomes.com/product-category/potraits/?filter_painting-size=10-to-20-inch</string>
-    <string name="Potrails20">https://ubiquitoushomes.com/product-category/potraits/?filter_painting-size=20-to-30-inch</string>
-    <string name="Refrigerator30">https://ubiquitoushomes.com/product-category/refrigerator/?filter_refrigerator=height-30-to-100-cm</string>
-    <string name="Refrigerator100">https://ubiquitoushomes.com/product-category/refrigerator/?filter_refrigerator=height-100-to-200-cm</string>
-    <string name="Sofa140">https://ubiquitoushomes.com/product-category/sofa/?filter_sofa-size=140-to-170-cm</string>
-    <string name="Sofa170">https://ubiquitoushomes.com/product-category/sofa/?filter_sofa-size=170-to-230-cm</string>
-    <string name="Painting">https://ubiquitoushomes.com/product-category/potraits/</string>
-    <string name="Bed">https://ubiquitoushomes.com/product-category/bed/</string>
-    <string name="Fridge">https://ubiquitoushomes.com/product-category/refrigerator/</string>
-    <string name="Sofa">https://ubiquitoushomes.com/product-category/sofa/</string>
-    <string name="Table">https://ubiquitoushomes.com/product-category/tables/</string>
+    <string name="TShirt40">https://tryb4.shop/?filter_shirts-size=101-36-cm-40-inch</string>
+    <string name="TShirt42">https://tryb4.shop/?filter_shirts-size=106-68-cm-42-inch</string>
+    <string name="TShirt38">https://tryb4.shop/?filter_shirts-size=96-5-cm-38-inch</string>
+    <string name="TShirt44">https://tryb4.shop/?filter_shirts-size=111-76-cm-44-inch</string>
+    <string name="TShirt46">https://tryb4.shop/?filter_shirts-size=116-84-cm-46-inch</string>
+    <string name="Overalls40">https://tryb4.shop/product-category/overalls/?filter_overalls=40-cm</string>
+    <string name="Overalls60">https://tryb4.shop/product-category/overalls/?filter_overalls=60-cm</string>
+    <string name="Tracks30">https://tryb4.shop/product-category/tracks/</string>
+    <string name="Tracks70">https://tryb4.shop/product-category/tracks/</string>
+    <string name="Kurti140">https://tryb4.shop/product-category/kurtis/</string>
+    <string name="Kurti170">https://tryb4.shop/product-category/kurtis/</string>
+    <string name="Overalls">https://tryb4.shop/product-category/overalls/</string>
+    <string name="Tracks">https://tryb4.shop/product-category/tracks/</string>
+    <string name="Kurti">https://tryb4.shop/product-category/kurtis/</string>
+    <string name="TShirt">https://tryb4.shop/product-category/shirts/</string>
     <string name="Shoes">https://tryb4.shop/product-category/shoes/</string>
     <string name="Length">Reference Length</string>
     <string name="Height">Reference Height</string>

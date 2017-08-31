@@ -39,7 +39,7 @@ public class Main2Activity extends ActionBarActivity {
     public void openPaint(View view) {
 
         Intent intent = new Intent(Main2Activity.this,MainActivity.class);
-        String name = "Painting";
+        String name = "Overalls";
         intent.putExtra("NAME", name);
         startActivity(intent);
     }
@@ -55,7 +55,7 @@ public class Main2Activity extends ActionBarActivity {
     public void openFridge(View view) {
 
         Intent intent = new Intent(this,MainActivity.class);
-        String name = "Fridge";
+        String name = "Tracks";
         intent.putExtra("NAME",name);
         startActivity(intent);
     }
@@ -63,7 +63,7 @@ public class Main2Activity extends ActionBarActivity {
     public void openSofa(View view) {
 
         Intent intent = new Intent(this,MainActivity.class);
-        String name = "Sofa";
+        String name = "Kurti";
         intent.putExtra("NAME",name);
         startActivity(intent);
     }
@@ -71,7 +71,7 @@ public class Main2Activity extends ActionBarActivity {
     public void openTable(View view) {
 
         Intent intent = new Intent(this,MainActivity.class);
-        String name = "Table";
+        String name = "TShirt";
         intent.putExtra("NAME",name);
         startActivity(intent);
     }
