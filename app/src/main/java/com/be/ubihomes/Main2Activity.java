@@ -12,7 +12,6 @@ import java.util.Random;
 public class Main2Activity extends ActionBarActivity {
 
 
-    //String prod_Type;
     int[] imageIds = {R.drawable.bg1,
             R.drawable.bg2,
             R.drawable.bg3,
