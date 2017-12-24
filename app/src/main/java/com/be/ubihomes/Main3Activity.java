@@ -75,10 +75,10 @@ public class Main3Activity extends ActionBarActivity {
         final String m3path = bundle.getString("PATH");
         Toast.makeText(Main3Activity.this,m3path,Toast.LENGTH_SHORT).show();
         String type_length = bundle.getString("LEN");
-        String type_height = bundle.getString("HEI");
+        //String type_height = bundle.getString("HEI");
 
         final Double dLength = Double.parseDouble(type_length);
-        final Double dHeight = Double.parseDouble(type_height);
+        //final Double dHeight = Double.parseDouble(type_height);
 
         String Overalls_1 = getResources().getString(R.string.Overalls40);
         String Overalls_2 = getResources().getString(R.string.Overalls60);
@@ -160,7 +160,7 @@ public class Main3Activity extends ActionBarActivity {
                 //Intent intent = new Intent(MainActivity.this,Main3Activity.class);
                 intent.putExtra("PATH",m3path);
                 intent.putExtra("DLEN",dLength);
-                intent.putExtra("DHEI",dHeight);
+                //intent.putExtra("DHEI",dHeight);
                 intent.putExtra("BUYU",buyurl);
                 startActivity(intent);
             }

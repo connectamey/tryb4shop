@@ -13,7 +13,7 @@ public class Ruler {
     private Ruler(){}
 
     public static double compute(List<Point> points, double scale, int inputUnitIndex, int outputUnitIndex){
-        if(points.size() < 6) return -1;
+        if(points.size() < 4) return -1;
 
         //Get reference points
         Point ref1 = points.get(0);
@@ -34,7 +34,7 @@ public class Ruler {
 
     }
 
-    public static double computeHeight(List<Point> points, double scale, int inputUnitHeightIndex, int outputUnitHeightIndex){
+    /*public static double computeHeight(List<Point> points, double scale, int inputUnitHeightIndex, int outputUnitHeightIndex){
         if(points.size() < 6) return -1;
 
         //Get reference points
@@ -58,7 +58,7 @@ public class Ruler {
         return height;
 
 
-    }
+    }*/
 
     private static double getDistance(Point p1, Point p2){
         double x = Math.pow(p2.x - p1.x, 2);
@@ -108,7 +108,7 @@ public class Ruler {
         }
     }
 
-    private static double convertUnitsHeight(int refUnitHeight, double reference, int meaUnitHeight, double height){
+    /*private static double convertUnitsHeight(int refUnitHeight, double reference, int meaUnitHeight, double height){
         if(refUnitHeight == meaUnitHeight)
             return height;
 
@@ -129,10 +129,10 @@ public class Ruler {
             default:
                 return -1;
         }
-    }
+    }*/
 
 
-    private static double toMetersHeight(double height, int refUnitHeight){
+    /*private static double toMetersHeight(double height, int refUnitHeight){
         switch (refUnitHeight){
             case 0:
                 return height;
@@ -147,7 +147,7 @@ public class Ruler {
             default:
                 return -1;
         }
-    }
+    }*/
 
 
 
