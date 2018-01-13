@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TableLayout;
 
+import com.goldducks.splashAnimations.SplashScreen;
+
 import java.util.Random;
 
 public class Main2Activity extends ActionBarActivity {
@@ -26,6 +28,7 @@ public class Main2Activity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
+        SplashScreen.show(this, SplashScreen.TERMINAL_ANIMATION);
         setContentView(R.layout.activity_main2);
 
         //random background code
