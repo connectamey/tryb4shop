@@ -80,9 +80,6 @@ public class Main3Activity extends ActionBarActivity {
         final Double dLength = Double.parseDouble(type_length);
         //final Double dHeight = Double.parseDouble(type_height);
 
-        String Overalls_1 = getResources().getString(R.string.Overalls40);
-        String Overalls_2 = getResources().getString(R.string.Overalls60);
-
         String Palazzo_30 = getResources().getString(R.string.Palazzo30);
         String Palazzo_40 = getResources().getString(R.string.Palazzo40);
         String Palazzo_50 = getResources().getString(R.string.Palazzo50);
@@ -170,19 +167,6 @@ public class Main3Activity extends ActionBarActivity {
         //filtering logic
         switch (name) {
 
-            case "Overalls": {
-                if (dLength < 60 && dLength > 40) {
-                    //webView.loadUrl("https://ubiquitoushomes.com/product-category/potraits/?filter_painting-size=10-to-20-inch");
-                    webView.loadUrl(Overalls_1);
-                } else if (dLength <70 && dLength > 60) {
-                    webView.loadUrl(Overalls_2);
-                }
-                else{
-                    Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
-                    webView.loadUrl(getResources().getString(R.string.Overalls));
-                }
-            }
-            break;
             case "Palazzos": {
                 if (dLength <=  101.6) {
                     webView.loadUrl(Palazzo_30);

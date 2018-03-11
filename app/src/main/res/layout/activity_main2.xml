@@ -32,7 +32,7 @@
             android:background="@drawable/tracks"
             android:layout_weight="1"
             android:id="@+id/fridge"
-            android:onClick="openFridge"
+            android:onClick="openTracks"
             android:layout_margin="16dp"
 
             />
@@ -43,7 +43,7 @@
             android:background="@drawable/kurta"
             android:layout_weight="1"
             android:id="@+id/sofa"
-            android:onClick="openSofa"
+            android:onClick="openKurti"
             android:layout_margin="16dp"
 
             />
@@ -57,7 +57,7 @@
             android:background="@drawable/shirt"
             android:layout_weight="1"
             android:id="@+id/table"
-            android:onClick="openTable"
+            android:onClick="openTshirt"
             android:layout_margin="16dp"
 
             />

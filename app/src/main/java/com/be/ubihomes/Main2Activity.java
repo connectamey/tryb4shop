@@ -38,15 +38,6 @@ public class Main2Activity extends ActionBarActivity {
         layout.setBackgroundResource(randomImageId);
     }
 
-
-    public void openPaint(View view) {
-
-        Intent intent = new Intent(Main2Activity.this,MainActivity.class);
-        String name = "Overalls";
-        intent.putExtra("NAME", name);
-        startActivity(intent);
-    }
-
     public void openPalazzo(View view) {
 
         Intent intent = new Intent(Main2Activity.this,MainActivity.class);
@@ -55,7 +46,7 @@ public class Main2Activity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void openFridge(View view) {
+    public void openTracks(View view) {
 
         Intent intent = new Intent(this,MainActivity.class);
         String name = "Tracks";
@@ -63,7 +54,7 @@ public class Main2Activity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void openSofa(View view) {
+    public void openKurti(View view) {
 
         Intent intent = new Intent(this,MainActivity.class);
         String name = "Kurti";
@@ -71,7 +62,7 @@ public class Main2Activity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    public void openTable(View view) {
+    public void openTshirt(View view) {
 
         Intent intent = new Intent(this,MainActivity.class);
         String name = "TShirt";
