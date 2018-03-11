@@ -21,7 +21,6 @@
             android:id="@+id/palazzo"
             android:onClick="openPalazzo"
             android:layout_margin="16dp"
-
             />
 
     </TableRow>
