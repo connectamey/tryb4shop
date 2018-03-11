@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -18,6 +19,10 @@ ProgressBar progressBar;
         setContentView(R.layout.activity_main5);
         WebView webView=(WebView)findViewById(R.id.buyWebView);
         webView.setWebViewClient(new WebViewClient());
+        webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+        webView.setScrollbarFadingEnabled(false);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         Log.e("URL","this "+loadthisurl);
         webView.loadUrl(loadthisurl);
 
