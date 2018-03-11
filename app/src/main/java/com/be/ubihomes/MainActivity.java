@@ -34,7 +34,8 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
     private Button btn_takePicture;
     private File photoFile;
     private double result;
-    //private double resultHeight;
+    private double resultHeight;
+    private double resultWidth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +48,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
         if (bundle != null){
             String name = bundle.getString("NAME");
             Toast.makeText(MainActivity.this,"You have selected"+" "+name+" "+"Category",Toast.LENGTH_SHORT).show();
-            Log.d("data","recieved "+name+" data");
+            Log.d("data","received "+name+" data");
         }
 
 
@@ -227,12 +228,14 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
     @Override
     public void onDialogPositiveClick(DialogFragment dialog) {
         int inputUnit = ((Spinner)dialog.getDialog().findViewById(R.id.input_unit_chooser)).getSelectedItemPosition();
-       //int inputUnitHeight = ((Spinner)dialog.getDialog().findViewById(R.id.input_unit_chooser)).getSelectedItemPosition();
+       int inputUnitHeight = ((Spinner)dialog.getDialog().findViewById(R.id.input_unit_chooser)).getSelectedItemPosition();
         int outputUnit = ((Spinner) dialog.getDialog().findViewById(R.id.output_unit_chooser)).getSelectedItemPosition();
         try {
             double reference = Double.parseDouble(((EditText) dialog.getDialog().findViewById(R.id.reference_input)).getText().toString());
             result = drawView.calculate(reference, inputUnit, outputUnit);
-            //resultHeight = drawView.calculateHeight(reference, inputUnit, outputUnit);
+            resultHeight = drawView.calculateHeight(reference, inputUnit, outputUnit);
+            resultWidth = drawView.calculateWidth(reference, inputUnit, outputUnit);
+
             showResult();
         }catch(NumberFormatException ex){
             Toast.makeText(this, getResources().getString(R.string.error_numberFormat), Toast.LENGTH_SHORT).show();
@@ -248,7 +251,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
         if(result != -1) {
             DecimalFormat decimalFormat = new DecimalFormat("#.##");
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage(getResources().getString(R.string.result_lbl) + decimalFormat.format(result)+"\n"); //+"Height :"+decimalFormat.format(resultHeight)
+            builder.setMessage(getResources().getString(R.string.result_lbl) + decimalFormat.format(result)+"\n" + "Height :"+decimalFormat.format(resultHeight)+"\n" + "Width :"+decimalFormat.format(resultWidth));
 
 
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -262,9 +265,10 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
                     intent.putExtra("PATH",fpath);
                     intent.putExtra("NAME",name);
                     intent.putExtra("LEN",decimalFormat.format(result));
-                    //intent.putExtra("HEI",decimalFormat.format(resultHeight));
-                    Toast.makeText(MainActivity.this,"Category :"+" "+name+"\n\n"+"Length : "+" "+decimalFormat.format(result),Toast.LENGTH_SHORT).show(); //+"\nHeight : "+" "+decimalFormat.format(resultHeight)
-                    Log.d("data","received "+name+" data\n"+"Length:"+decimalFormat.format(result)); //+"\nHeight:"+decimalFormat.format(resultHeight)
+                    intent.putExtra("HEI",decimalFormat.format(resultHeight));
+                    intent.putExtra("WID",decimalFormat.format(resultWidth));
+                    Toast.makeText(MainActivity.this,"Category :"+" "+name+"\n\n"+"Length : "+" "+decimalFormat.format(result)+""+"\nHeight : "+" "+decimalFormat.format(resultHeight)+""+"\nWidth : "+" "+decimalFormat.format(resultWidth),Toast.LENGTH_SHORT).show(); //
+                    Log.d("data","received "+name+" data\n"+"Length:"+decimalFormat.format(result)+"\n Height:"+decimalFormat.format(resultHeight)+"\n Width:"+decimalFormat.format(resultWidth));
                     startActivity(intent);
                 }
             });

@@ -13,7 +13,7 @@ public class Ruler {
     private Ruler(){}
 
     public static double compute(List<Point> points, double scale, int inputUnitIndex, int outputUnitIndex){
-        if(points.size() < 4) return -1;
+        if(points.size() < 8) return -1;
 
         //Get reference points
         Point ref1 = points.get(0);
@@ -34,8 +34,8 @@ public class Ruler {
 
     }
 
-    /*public static double computeHeight(List<Point> points, double scale, int inputUnitHeightIndex, int outputUnitHeightIndex){
-        if(points.size() < 6) return -1;
+    public static double computeHeight(List<Point> points, double scale, int inputUnitHeightIndex, int outputUnitHeightIndex){
+        if(points.size() < 8) return -1;
 
         //Get reference points
         Point ref3 = points.get(0);
@@ -45,10 +45,10 @@ public class Ruler {
         Point n2 = points.get(5);
 
 
-        //double reference = getDistance(ref3, ref4);
         double reference = getDistance(ref3, ref4);
+        //double reference = getDistance(ref3, ref4);
         Log.d("RefenceDPI","ref3-4 :"+reference);
-        //double measurement = getDistance(n1, n2);
+        double measurement = getDistance(n1, n2);
         double height = getDistance(n1, n2);
         Log.d("HeightDPI","refn1-2 :"+height);
         height = (height * scale) / reference; //Get the actual distance
@@ -58,7 +58,33 @@ public class Ruler {
         return height;
 
 
-    }*/
+    }
+
+    public static double computeWidth(List<Point> points, double scale, int inputUnitWidthIndex, int outputUnitWidthIndex){
+        if(points.size() < 8) return -1;
+
+        //Get reference points
+        Point ref3 = points.get(0);
+        Point ref4 = points.get(1);
+        //Get the measurement points
+        Point n1 = points.get(6);
+        Point n2 = points.get(7);
+
+
+        double reference = getDistance(ref3, ref4);
+        //double reference = getDistance(ref3, ref4);
+        Log.d("RefenceDPI","ref3-4 :"+reference);
+        double measurement = getDistance(n1, n2);
+        double width = getDistance(n1, n2);
+        Log.d("WidthDPI","refn1-2 :"+width);
+        width = (width * scale) / reference; //Get the actual distance
+        //Convert to the right unit
+        width = convertUnitsWidth(inputUnitWidthIndex, reference, outputUnitWidthIndex, width);
+        Log.d("Width","measurement width :"+width);
+        return width;
+
+
+    }
 
     private static double getDistance(Point p1, Point p2){
         double x = Math.pow(p2.x - p1.x, 2);
@@ -108,7 +134,7 @@ public class Ruler {
         }
     }
 
-    /*private static double convertUnitsHeight(int refUnitHeight, double reference, int meaUnitHeight, double height){
+    private static double convertUnitsHeight(int refUnitHeight, double reference, int meaUnitHeight, double height){
         if(refUnitHeight == meaUnitHeight)
             return height;
 
@@ -129,10 +155,12 @@ public class Ruler {
             default:
                 return -1;
         }
-    }*/
+    }
 
 
-    /*private static double toMetersHeight(double height, int refUnitHeight){
+
+
+    private static double toMetersHeight(double height, int refUnitHeight){
         switch (refUnitHeight){
             case 0:
                 return height;
@@ -147,7 +175,47 @@ public class Ruler {
             default:
                 return -1;
         }
-    }*/
+    }
+
+    private static double convertUnitsWidth(int refUnitWidth, double reference, int meaUnitWidth, double width){
+        if(refUnitWidth == meaUnitWidth)
+            return width;
+
+        width = toMetersWidth(width, refUnitWidth);
+        switch (meaUnitWidth){
+            case 0:
+                return width;
+            case 1:
+                return Utils.metersToCentimeters(width);
+            case 2:
+                return Utils.metersToMillimeters(width);
+            case 3:
+                return Utils.metersToInch(width);
+            case 4:
+                return Utils.metersToFeet(width);
+            case 5:
+                return Utils.metersToYards(width);
+            default:
+                return -1;
+        }
+    }
+
+    private static double toMetersWidth(double width, int refUnitWidth){
+        switch (refUnitWidth){
+            case 0:
+                return width;
+            case 1:
+                return Utils.centimetersToMeters(width);
+            case 2:
+                return Utils.millimetersToMeters(width);
+            case 3:
+                return Utils.inchesToMeters(width);
+            case 4:
+                return Utils.yardsToMeters(width);
+            default:
+                return -1;
+        }
+    }
 
 
 
