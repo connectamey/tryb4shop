@@ -28,12 +28,14 @@ import java.text.DecimalFormat;
 public class MainActivity extends ActionBarActivity implements InputDialog.InputDialogListener{
 
     private DrawView drawView;
+    private DrawView2 drawView2;
     private FrameLayout preview;
     private Button btn_ok;
     private Button btn_cancel;
     private Button btn_takePicture;
     private File photoFile;
     private double result;
+    public String name;
     private double resultHeight;
     private double resultWidth;
     @Override
@@ -46,7 +48,7 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
         Bundle bundle = getIntent().getExtras();
 
         if (bundle != null){
-            String name = bundle.getString("NAME");
+        name = bundle.getString("NAME");
             Toast.makeText(MainActivity.this,"You have selected"+" "+name+" "+"Category",Toast.LENGTH_SHORT).show();
             Log.d("data","received "+name+" data");
         }
@@ -79,7 +81,12 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(name.contains("TShirt") || name.contains("Kurti")){
                 drawView.clearCanvas();
+            }
+            else{
+                    drawView2.clearCanvas();
+                }
             }
         });
 
@@ -162,9 +169,15 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
         preview.addView(image);
 
         ((TextView) findViewById(R.id.info_lbl)).setText(getResources().getString(R.string.setReferencePoints));
-
+    if (name.contains("TShirt") || name.contains("Kurti"))
+    {
         drawView = new DrawView(this);
         preview.addView(drawView);
+    }
+    else{
+        drawView2 = new DrawView2(this);
+        preview.addView(drawView2);
+    }
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -232,11 +245,21 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
         int outputUnit = ((Spinner) dialog.getDialog().findViewById(R.id.output_unit_chooser)).getSelectedItemPosition();
         try {
             double reference = Double.parseDouble(((EditText) dialog.getDialog().findViewById(R.id.reference_input)).getText().toString());
-            result = drawView.calculate(reference, inputUnit, outputUnit);
-            resultHeight = drawView.calculateHeight(reference, inputUnit, outputUnit);
-            resultWidth = drawView.calculateWidth(reference, inputUnit, outputUnit);
+            //result = drawView.calculate(reference, inputUnit, outputUnit);
+            //resultHeight = drawView.calculateHeight(reference, inputUnit, outputUnit);
+            //resultWidth = drawView.calculateWidth(reference, inputUnit, outputUnit);
+            if (name.contains("TShirt") || name.contains("Kurti")){
+                result = drawView.calculate(reference, inputUnit, outputUnit);
+                resultHeight = drawView.calculateHeight(reference, inputUnit, outputUnit);
+                resultWidth = drawView.calculateWidth(reference, inputUnit, outputUnit);
+                showResult();
+            }
+            else{
+                result = drawView2.calculate2(reference, inputUnit, outputUnit);
+                showResult();
 
-            showResult();
+            }
+
         }catch(NumberFormatException ex){
             Toast.makeText(this, getResources().getString(R.string.error_numberFormat), Toast.LENGTH_SHORT).show();
         }

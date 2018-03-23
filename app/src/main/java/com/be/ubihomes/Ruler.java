@@ -33,6 +33,27 @@ public class Ruler {
 
 
     }
+    public static double compute2(List<Point> points, double scale, int inputUnitIndex, int outputUnitIndex){
+        if(points.size() < 4) return -1;
+
+        //Get reference points
+        Point ref1 = points.get(0);
+        Point ref2 = points.get(1);
+        //Get the measurement points
+        Point m1 = points.get(2);
+        Point m2 = points.get(3);
+        double reference = getDistance(ref1, ref2);
+        Log.d("reference px ","good "+reference);
+        //double reference_two = getDistance(ref3, ref4);
+        double measurement = getDistance(m1, m2);
+        Log.d("LengthDPI","m1-2 :"+measurement);
+        measurement = (measurement * scale) / reference; //Get the actual distance
+        //Convert to the right unit
+        measurement = convertUnits(inputUnitIndex, reference, outputUnitIndex, measurement);
+        return measurement;
+
+
+    }
 
     public static double computeHeight(List<Point> points, double scale, int inputUnitHeightIndex, int outputUnitHeightIndex){
         if(points.size() < 8) return -1;
