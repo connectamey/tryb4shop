@@ -94,9 +94,14 @@ public class Main3Activity extends ActionBarActivity {
         String Kurti_2 = getResources().getString(R.string.Kurti170);
 
         String TShirt_1 = getResources().getString(R.string.TShirt38);
+        String Tshirt_1full = getResources().getString(R.string.TShirt38full);
         String TShirt_2 = getResources().getString(R.string.TShirt40);
+        String Tshirt_2full = getResources().getString(R.string.TShirt40full);
         String TShirt_3 = getResources().getString(R.string.TShirt42);
+        String TShirt_3full = getResources().getString(R.string.TShirt42full);
         String TShirt_4 = getResources().getString(R.string.TShirt44);
+        String TShirt_4full = getResources().getString(R.string.TShirt44full);
+        String Tshirt = getResources().getString(R.string.TShirt);
 
         String Shoes_1 = getResources().getString(R.string.Shoes4);
         String Shoes_2 = getResources().getString(R.string.Shoes6);
@@ -209,13 +214,45 @@ public class Main3Activity extends ActionBarActivity {
             break;
             case "TShirt": {
                 if (dLength < 106.68 && dLength > 101.36) {
-                    webView.loadUrl(TShirt_1);
+                    if(dWidth < 16 && dWidth > 10) {
+                        webView.loadUrl(TShirt_1); //Short sleeve shirt
+                    }
+                    else if(dWidth < 46 && dWidth > 30){
+                        webView.loadUrl(Tshirt_1full); //Long Sleeve shirt
+                    }
+                    else{
+                        webView.loadUrl(Tshirt);
+                    }
                 } else if (dLength < 111.76 && dLength > 106.68) {
-                    webView.loadUrl(TShirt_2);
+                    if(dWidth < 26 && dWidth > 16) {
+                        webView.loadUrl(TShirt_2);
+                    }
+                    else if (dWidth < 56 && dWidth > 40){
+                        webView.loadUrl(Tshirt_2full);
+                    }
+                    else{
+                        webView.loadUrl(Tshirt);
+                    }
                 }else if(dLength < 116.84 && dLength > 111.76){
-                    webView.loadUrl(TShirt_3);
+                    if(dWidth < 35 && dWidth > 24) {
+                        webView.loadUrl(TShirt_3);
+                    }
+                    else if (dWidth < 68 && dWidth > 50){
+                        webView.loadUrl(TShirt_3full);
+                    }
+                    else{
+                        webView.loadUrl(Tshirt);
+                    }
                 }else if(dLength < 130 && dLength > 116.84){
-                    webView.loadUrl(TShirt_4);
+                    if(dWidth < 45 && dWidth > 32) {
+                        webView.loadUrl(TShirt_4);
+                    }
+                    else if(dWidth < 78 && dWidth > 60){
+                        webView.loadUrl(TShirt_4full);
+                    }
+                    else{
+                        webView.loadUrl(Tshirt);
+                    }
                 }else {
                     Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
                     webView.loadUrl(getResources().getString(R.string.TShirt));

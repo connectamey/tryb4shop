@@ -31,11 +31,14 @@
     <string name="Palazzo30">https://tryb4.shop/?filter_palazzo-size=76-2-cm-30-inch</string>
     <string name="Palazzo40">https://tryb4.shop/?filter_palazzo-size=101-6-cm-40-inch</string>
     <string name="Palazzo50">https://tryb4.shop/?filter_palazzo-size=127-cm-50-inch</string>
-    <string name="TShirt40">https://tryb4.shop/?filter_shirts-size=101-36-cm-40-inch</string>
-    <string name="TShirt42">https://tryb4.shop/?filter_shirts-size=106-68-cm-42-inch</string>
-    <string name="TShirt38">https://tryb4.shop/?filter_shirts-size=96-5-cm-38-inch</string>
-    <string name="TShirt44">https://tryb4.shop/?filter_shirts-size=111-76-cm-44-inch</string>
-    <string name="TShirt46">https://tryb4.shop/?filter_shirts-size=116-84-cm-46-inch</string>
+    <string name="TShirt40">https://tryb4.shop/?filter_shirts-size=medium-half-sleeves</string>
+    <string name="TShirt40full">https://tryb4.shop/?filter_shirts-size=medium-full-sleeves</string>
+    <string name="TShirt42">https://tryb4.shop/?filter_shirts-size=large-half-sleeves</string>
+    <string name="TShirt42full">https://tryb4.shop/?filter_shirts-size=large-full-sleeves</string>
+    <string name="TShirt38">https://tryb4.shop/?filter_shirts-size=small-half-sleeves</string>
+    <string name="TShirt38full">https://tryb4.shop/?filter_shirts-size=small-full-sleeves</string>
+    <string name="TShirt44">https://tryb4.shop/?filter_shirts-size=extra-large-half-sleeves</string>
+    <string name="TShirt44full">https://tryb4.shop/?filter_shirts-size=extra-large-full-sleeves</string>
     <string name="Overalls40">https://tryb4.shop/product-category/overalls/?filter_overalls=40-cm</string>
     <string name="Overalls60">https://tryb4.shop/product-category/overalls/?filter_overalls=60-cm</string>
     <string name="Tracks30">https://tryb4.shop/product-category/tracks/</string>
