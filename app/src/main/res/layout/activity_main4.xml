@@ -71,5 +71,12 @@
         android:layout_toStartOf="@+id/anticlock"
         android:background="@drawable/clockwise"/>
 
-
+    <Button
+        android:id="@+id/sharebutton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/wa"
+        />
 </RelativeLayout>
