@@ -2,6 +2,7 @@ package com.be.ubihomes;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,6 +17,11 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import static android.R.attr.name;
 import static android.R.attr.process;
@@ -140,6 +146,15 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
                 .thumbnail(0.5f)
                 .into(imageView);
 
+Button sharebutton = (Button)(findViewById(R.id.sharebutton));
+sharebutton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Bitmap bitmap = takeScreenshot();
+        saveBitmap(bitmap);
+        shareIt();
+    }
+});
     }
     float x,y=0.0f;
     boolean moving = false;
@@ -169,9 +184,37 @@ public class Main4Activity extends ActionBarActivity implements View.OnTouchList
         return true;
     }
 
+    public Bitmap takeScreenshot() {
+        View rootView = findViewById(android.R.id.content).getRootView();
+        rootView.setDrawingCacheEnabled(true);
+        return rootView.getDrawingCache();
+    }
 
+    File imagePath;
+    public void saveBitmap(Bitmap bitmap) {
+         imagePath = new File(Environment.getExternalStorageDirectory() + "/screenshot.png");
+        FileOutputStream fos;
+        try {
+            fos = new FileOutputStream(imagePath);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            Log.e("GREC", e.getMessage(), e);
+        } catch (IOException e) {
+            Log.e("GREC", e.getMessage(), e);
+        }
+        }
+    private void shareIt() {
+        Uri uri = Uri.fromFile(imagePath);
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("image/*");
+        String shareBody = "Always 'try' before you 'buy' Install TryB4Shop Now: https://play.google.com/store/apps/details?id=com.be.ubihomes";
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "My Tweecher score");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        sharingIntent.putExtra(Intent.EXTRA_STREAM, uri);
 
-
-
+        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+    }
 
 }
