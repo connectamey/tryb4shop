@@ -71,7 +71,8 @@ public class Main3Activity extends ActionBarActivity {
         //webView.loadUrl("https://ubiquitoushomes.com/");
 
         Bundle bundle = getIntent().getExtras();
-        String name = bundle.getString("NAME");
+        String name = "";
+        name = bundle.getString("NAME");
         final String m3path = bundle.getString("PATH");
         Toast.makeText(Main3Activity.this,m3path,Toast.LENGTH_SHORT).show();
         String type_length = bundle.getString("LEN");
@@ -89,9 +90,14 @@ public class Main3Activity extends ActionBarActivity {
 
         String Tracks_1 = getResources().getString(R.string.Tracks30);
         String Tracks_2 = getResources().getString(R.string.Tracks70);
+        String Tracks_3 = getResources().getString(R.string.Tracks90);
 
-        String Kurti_1 = getResources().getString(R.string.Kurti140);
-        String Kurti_2 = getResources().getString(R.string.Kurti170);
+        String Kurti_1 = getResources().getString(R.string.Kurti1);
+        String Kurtilong_1 = getResources().getString(R.string.Kurtilong1);
+        String Kurti_2 = getResources().getString(R.string.Kurti2);
+        String Kurtilong_2 = getResources().getString(R.string.Kurtilong2);
+        String Kurti_3 = getResources().getString(R.string.Kurti3);
+        String Kurtilong_3 = getResources().getString(R.string.Kurtilong3);
 
         String TShirt_1 = getResources().getString(R.string.TShirt38);
         String Tshirt_1full = getResources().getString(R.string.TShirt38full);
@@ -176,101 +182,114 @@ public class Main3Activity extends ActionBarActivity {
         switch (name) {
 
             case "Palazzos": {
-                if (dLength <=  101.6) {
+                if (dLength > 0 && dLength <= 76.2) {
                     webView.loadUrl(Palazzo_30);
-                } else if (dLength > 101.6 && dLength < 127 ) {
+                } else if (dLength > 76.2 && dLength <= 101.6 ) {
                     webView.loadUrl(Palazzo_40);
-                } else if(dLength >= 127 && dLength < 140) {
+                } else if(dLength > 101.6) {
                     webView.loadUrl(Palazzo_50);
 
                 } else {
-                    Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main3Activity.this, "Check out from our collection of Palazzos ", Toast.LENGTH_SHORT).show();
                     webView.loadUrl(getResources().getString(R.string.Palazzo));
                 }
 
             }
             break;
             case "Tracks": {
-                if (dLength < 55.5 && dLength > 30) {
+                if (dLength > 0 && dLength <= 76) {
                     webView.loadUrl(Tracks_1);
-                } else if (dLength < 90.8 && dLength > 43) {
+                } else if (dLength > 76 && dLength <= 81) {
                     webView.loadUrl(Tracks_2);
-                } else {
-                    Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
+                }
+                else if(dLength > 81){
+                    webView.loadUrl(Tracks_3);
+                }
+                else {
+                    Toast.makeText(Main3Activity.this, "Check out from our collection of Tracks ", Toast.LENGTH_SHORT).show();
                     webView.loadUrl(getResources().getString(R.string.Tracks));
                 }
             }
             break;
             case "Kurti": {
-                if (dLength < 76 && dLength > 72) {
-                    if(dWidth < 26 && dWidth > 16) {
+                if (dLength > 0 && dLength <= 35) {
+                    if(dHeight > 0 && dHeight <= 65) {
                         webView.loadUrl(Kurti_1); //Short Sleeve Kurti
                     }
-                    else if(dWidth < 56 && dWidth > 40){
-                        webView.loadUrl(Kurti_1); //Long Sleeve Kurti
+                    else if(dHeight > 65){
+                        webView.loadUrl(Kurtilong_1); //Long Sleeve Kurti
                     }
                     else{
                         webView.loadUrl(Kurti_1);
                     }
-                } else if (dLength < 94 && dLength > 82) {
-                    if(dWidth < 45 && dWidth > 32) {
+                } else if (dLength > 35 && dLength <= 37) {
+                    if (dHeight > 0 && dHeight <= 70) {
                         webView.loadUrl(Kurti_2); //Short Sleeve Kurti
-                    }
-                    else if(dWidth < 78 && dWidth > 60){
-                        webView.loadUrl(Kurti_2); //Long Sleeve Kurti
-                    }
-                    else{
+                    } else if (dHeight > 70) {
+                        webView.loadUrl(Kurtilong_2); //Long Sleeve Kurti
+
+                    } else {
                         webView.loadUrl(Kurti_2);
                     }
+                }else if (dLength > 37 ) {
+                        if(dHeight > 0 && dHeight <= 75) {
+                            webView.loadUrl(Kurti_3); //Short Sleeve Kurti
+                        }
+                        else if(dHeight > 75){
+                            webView.loadUrl(Kurtilong_3); //Long Sleeve Kurti
+                        }
+                        else{
+                            webView.loadUrl(Kurti_3);
+                        }
                 } else {
-                    Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main3Activity.this, "Check out from our collection of Kurtis", Toast.LENGTH_SHORT).show();
                     webView.loadUrl(getResources().getString(R.string.Kurti));
                 }
             }
             break;
             case "TShirt": {
-                if (dLength < 60 && dLength >= 50) {
-                    if(dWidth < 16 && dWidth > 10) {
-                        webView.loadUrl(TShirt_1); //Short sleeve shirt
+                if (dLength > 0 && dLength <= 35) {
+                    if(dHeight > 0 && dHeight <= 13) {
+                        webView.loadUrl(TShirt_1); //Short sleeve tshirt
                     }
-                    else if(dWidth < 46 && dWidth > 30){
-                        webView.loadUrl(Tshirt_1full); //Long Sleeve shirt
+                    else if(dHeight > 13){
+                        webView.loadUrl(Tshirt_1full); //Long Sleeve tshirt
                     }
                     else{
                         webView.loadUrl(Tshirt);
                     }
-                } else if (dLength < 70 && dLength >=60) {
-                    if(dWidth < 26 && dWidth > 16) {
+                } else if (dLength > 35 && dLength <= 37) {
+                    if(dHeight > 0 && dHeight <= 17) {
                         webView.loadUrl(TShirt_2);
                     }
-                    else if (dWidth < 56 && dWidth > 40){
+                    else if (dHeight > 17){
                         webView.loadUrl(Tshirt_2full);
                     }
                     else{
                         webView.loadUrl(Tshirt);
                     }
-                }else if(dLength < 80 && dLength >= 70){
-                    if(dWidth < 35 && dWidth > 24) {
+                }else if(dLength > 37 && dLength <= 39){
+                    if(dHeight > 0 && dHeight <= 25) {
                         webView.loadUrl(TShirt_3);
                     }
-                    else if (dWidth < 68 && dWidth > 50){
+                    else if (dHeight > 25){
                         webView.loadUrl(TShirt_3full);
                     }
                     else{
                         webView.loadUrl(Tshirt);
                     }
-                }else if(dLength < 90 && dLength >= 80){
-                    if(dWidth < 45 && dWidth > 32) {
+                }else if(dLength > 39){
+                    if(dHeight > 0 && dHeight <= 25) {
                         webView.loadUrl(TShirt_4);
                     }
-                    else if(dWidth < 78 && dWidth > 60){
+                    else if(dHeight > 25){
                         webView.loadUrl(TShirt_4full);
                     }
                     else{
                         webView.loadUrl(Tshirt);
                     }
                 }else {
-                    Toast.makeText(Main3Activity.this, "Sorry !!! Product not available ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main3Activity.this, "Check out from our collection of Tshirts", Toast.LENGTH_SHORT).show();
                     webView.loadUrl(getResources().getString(R.string.TShirt));
                 }
             }
@@ -285,11 +304,15 @@ public class Main3Activity extends ActionBarActivity {
                 } else if (dLength > 26) {
                     webView.loadUrl(Shoes_4);
                 } else {
-                    Toast.makeText(Main3Activity.this, "Sorry !!! Product not available of this size.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main3Activity.this, "Check out from our collection of Shoes", Toast.LENGTH_SHORT).show();
                     webView.loadUrl(getResources().getString(R.string.Shoes));
                 }
             }
             break;
+            default:{
+                Toast.makeText(Main3Activity.this, "Check out from our collection of Shoes", Toast.LENGTH_SHORT).show();
+                webView.loadUrl(getResources().getString(R.string.Shoes));
+            }
         }
 
        }

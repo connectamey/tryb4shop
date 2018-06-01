@@ -41,10 +41,15 @@
     <string name="TShirt44full">https://tryb4.shop/?filter_shirts-size=extra-large-full-sleeves</string>
     <string name="Overalls40">https://tryb4.shop/product-category/overalls/?filter_overalls=40-cm</string>
     <string name="Overalls60">https://tryb4.shop/product-category/overalls/?filter_overalls=60-cm</string>
-    <string name="Tracks30">https://tryb4.shop/product-category/tracks/</string>
-    <string name="Tracks70">https://tryb4.shop/product-category/tracks/</string>
-    <string name="Kurti140">https://tryb4.shop/product-category/kurtis/</string>
-    <string name="Kurti170">https://tryb4.shop/product-category/kurtis/</string>
+    <string name="Tracks30">https://tryb4.shop/?filter_tracks-size=76-cm</string>
+    <string name="Tracks70">https://tryb4.shop/?filter_tracks-size=81-cm</string>
+    <string name="Tracks90">https://tryb4.shop/?filter_tracks-size=86-cm</string>
+    <string name="Kurti1">https://tryb4.shop/?filter_kurtis-front-length=small-86-3634-inch-short</string>
+    <string name="Kurtilong1">https://tryb4.shop/?filter_kurtis-front-length=small-86-3634-inch-long</string>
+    <string name="Kurti2">https://tryb4.shop/?filter_kurtis-front-length=medium-86-3634-inch-short</string>
+    <string name="Kurtilong2">https://tryb4.shop/?filter_kurtis-front-length=medium-111-7644-inch-long</string>
+    <string name="Kurti3">https://tryb4.shop/?filter_kurtis-front-length=large121-9248-inch-short</string>
+    <string name="Kurtilong3">https://tryb4.shop/?filter_kurtis-front-length=large121-9248-inch-long</string>
     <string name="Overalls">https://tryb4.shop/product-category/overalls/</string>
     <string name="Tracks">https://tryb4.shop/product-category/tracks/</string>
     <string name="Kurti">https://tryb4.shop/product-category/kurtis/</string>
