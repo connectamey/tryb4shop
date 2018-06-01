@@ -185,7 +185,7 @@ sharebutton.setOnClickListener(new View.OnClickListener() {
     }
 
     public Bitmap takeScreenshot() {
-        View rootView = findViewById(android.R.id.content).getRootView();
+        View rootView = findViewById(R.id.mainrelativelayout);
         rootView.setDrawingCacheEnabled(true);
         return rootView.getDrawingCache();
     }
@@ -210,7 +210,7 @@ sharebutton.setOnClickListener(new View.OnClickListener() {
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("image/*");
         String shareBody = "Always 'try' before you 'buy' Install TryB4Shop Now: https://play.google.com/store/apps/details?id=com.be.ubihomes";
-        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "My Tweecher score");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "TtyB4Shop Invite");
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
         sharingIntent.putExtra(Intent.EXTRA_STREAM, uri);
 
