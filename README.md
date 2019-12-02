@@ -1,25 +1,43 @@
-# Camera Ruler
-Android app used to measure objects using a smartphone camera.
-[Project Page](https://goncalojoaocorreia.github.io/camera-ruler/)
+#AndroidDevChallenge
 
-## The goal, and how to use it
-This app was made as an alternative to time-consuming measurements by hand needed by professionals of various fields. 
-It is not meant for exact measurements where you need millimetric precision, but instead used for plausible estimates and quick prototyping.
+# Tell us what your idea is.
 
-It works using a reference size on the same plane as the object the user wants to measure. This way, the need for large measuring tapes is eliminated and one needs to carry only a small object of known size, and an Android smartphone.
+TryB4Shop, as the name suggests the user can try the items before he/ she buys the product. The app is basically made for low end Android devices. First, the user has to give the known measurements of reference object then select the end points of body part which height/ width to be measured. Based upon the known reference object dimensions, the app will give the dimensions of selected part. According to that the products suitable for that size will be displayed. Afterwards, a user can select the product and try it on the body part. If user likes it then he can make the purchase and pay via cryptocurrency of his/ her choice.
+We can leverage the power of ondevice machine learning (TensorFlow Lite) for body part detection and fit the object perfectly on it. Since now, we are doing it manually. Also, we can user ARCore to make the whole transaction in realtime. We can host it on GoogleCloud & use Google Pay based payments to make it scalable.
+After gathering a lot of data from users, we can create models which can predict the exact items user will buy based upon his/ her body part's size, color, region, etc. You can see the app in action in the following video where, I've taken the example of shoes:
+This is only Proof Of Concept. No actual product will be delivered
 
-Conversions between length units is supported, and area measurement will be implemented in a later version.
+https://www.youtube.com/watch?v=FZ9aNgkbUz4
 
-## Current versions
 
-[v1.0.0-beta](https://github.com/GoncaloJoaoCorreia/camera-ruler/releases/tag/v1.0-beta)
+## Tell us how you plan on bringing it to life.
 
-## Building instructions
+I could use Google Help from Business as well as technology point of view. To finalize the exact business model also, to freeze the requirements after user testing as well as mentorship support for the technologies.
 
-The gradle build scripts are included, as well as the project configuration files. Importing the project to Android Studio and building it should suffice.
+December 2019:
+Finalizing Business model (retailers tie ups/ affiliate/ inventory, etc.)
+Creating TensorFlow Lite supported models to recognize Foot
+Implement updated design in Augmented Reality part in ARCore.
 
-## License
+January 2020:
+Implement updated design in Augmented Reality part in OpenCV to support low end devices and make operation in realtime.
 
-*TL,DR:*
+February 2020 :
+Develop working real time functionality to show recommended shoes according to the foot size till finalizing cryptocurrency transaction
 
-This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details (included with source code).
+March 2020 :
+Finalize Android native UI.
+Adding Registration, Login functionality
+Acquiring users for Beta Testing
+
+April 2020 :
+Fixing Bugs, Taking user feedback, making app stable for Google IO Release
+
+May 2020 :
+Release at Google IO :)
+
+
+
+### Tell us about you.
+
+I’m Amey Bansod with 5+ years experience in Android Application Development, Website Development & Digital Marketing combined. I co-founded a startup: ABP Systems & Solutions in my Second Year Engineering (2015), where we developed websites & apps for Small Business Owners in India. I also run a Technology Blog: TechnoClever.com which makes people clever in Tech & I really like to sing Indian Classical Music & write Poets. I’m the guy who gets things done! No matter what ;)
