@@ -6,8 +6,9 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -24,9 +25,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import static android.R.attr.name;
-import static android.R.attr.process;
 
-public class Main4Activity extends ActionBarActivity implements View.OnTouchListener {
+public class Main4Activity extends AppCompatActivity implements View.OnTouchListener {
     ImageView imageView;
     ImageView product;
     Button btn, btnplus,btnminus,btnclock,btnanticlock;

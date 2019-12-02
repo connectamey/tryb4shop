@@ -1,15 +1,15 @@
 package com.be.ubihomes;
 
-import android.support.v7.app.ActionBarActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-public class Main5Activity extends ActionBarActivity {
+public class Main5Activity extends AppCompatActivity {
 ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -6,8 +6,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.provider.MediaStore;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,12 +20,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
 
-public class MainActivity extends ActionBarActivity implements InputDialog.InputDialogListener{
+public class MainActivity extends AppCompatActivity implements InputDialog.InputDialogListener{
 
     private DrawView drawView;
     private DrawView2 drawView2;
@@ -131,12 +133,6 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
                 imgp=photoFile.getName();
 
 
-                Toast.makeText(MainActivity.this,imgp,Toast.LENGTH_SHORT).show();
-
-
-//                Intent intent = new Intent(MainActivity.this,Main3Activity.class);
-//                intent.putExtra("PATH",imgp);
-
             } catch (IOException ex) {
                 // Error occurred while creating the File
                 Toast.makeText(this, "Error creating image", Toast.LENGTH_SHORT);
@@ -145,6 +141,8 @@ public class MainActivity extends ActionBarActivity implements InputDialog.Input
             if (photoFile != null) {
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
                         Uri.fromFile(photoFile));
+                StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+                StrictMode.setVmPolicy(builder.build());
                 startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
             }
         }

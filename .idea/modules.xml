@@ -3,8 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/new_pro.iml" filepath="$PROJECT_DIR$/new_pro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../Amey/AndroidStudioProjects/new_pro/new_pro1.iml" filepath="$PROJECT_DIR$/../../../Amey/AndroidStudioProjects/new_pro/new_pro1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tryb4shop.iml" filepath="$PROJECT_DIR$/tryb4shop.iml" />
     </modules>
   </component>
 </project>

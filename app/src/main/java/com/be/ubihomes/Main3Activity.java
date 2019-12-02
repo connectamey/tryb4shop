@@ -7,7 +7,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.ActionBarActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -21,7 +22,7 @@ import android.widget.Toast;
 import java.io.File;
 import java.util.ArrayList;
 
-public class Main3Activity extends ActionBarActivity {
+public class Main3Activity extends AppCompatActivity {
 
     WebView webView;
     ProgressBar progressBar;
