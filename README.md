@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=FZ9aNgkbUz4
 
 #### This is only Proof Of Concept. No actual product will be delivered
 
-I've also published an on my blog: TechnoClever.com
+I've also published the article on my blog: TechnoClever.com
 https://technoclever.com/my-virtual-dressing-room-app-powered-by-bitcoin-blockchain.html
 
 ## Tell us how you plan on bringing it to life.
