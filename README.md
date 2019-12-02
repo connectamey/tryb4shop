@@ -12,8 +12,7 @@ https://www.youtube.com/watch?v=FZ9aNgkbUz4
 
 ## Tell us how you plan on bringing it to life.
 
-I could use Google Help from Business as well as technology point of view. To finalize the exact business model also, to freeze the requirements after user testing as well as mentorship support for the technologies.
-
+I could use Google Help from Business as well as technology point of view.
 December 2019:
 Finalizing Business model (retailers tie ups/ affiliate/ inventory, etc.)
 Creating TensorFlow Lite supported models to recognize Foot
