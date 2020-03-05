@@ -6,7 +6,7 @@ https://www.youtube.com/watch?v=FZ9aNgkbUz4
 
 ## This is only Proof Of Concept. No actual product will be delivered
 
-## Read Blog Post on TechnoClever.com
+## Read Blog Post on TechnoClever.com (Screenshots & Video)
 https://technoclever.com/my-virtual-dressing-room-app-powered-by-bitcoin-blockchain.html
 
 ## Download Beta on PlayStore
